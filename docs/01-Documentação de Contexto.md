@@ -11,7 +11,12 @@ Outro fato relevante no processo de certificação é que para contratos de empr
 Diante disso, torna-se fundamental que empresas de construção tenham um corpo técnico qualificado ou alguém externo à empresa que possa orientar a respeito da normalização, quais ensaios precisam ser realizados e onde realizar estes ensaios.
 
 ## Problema
-Conforme exposto, o problema que se busca resolver com este projeto é a falta de informações precisas sobre normalização, ensaios e laboratórios que a construção civil precisa para atender o código de defesa do consumidor.  
+Conforme exposto, o problema que se busca resolver com este projeto é a falta de informações precisas sobre normalização, ensaios e laboratórios que a construção civil precisa para atender o código de defesa do consumidor.
+
+Isso inclui também:
+- Encontrar laboratórios próximos.
+- Identificar qual a certificação de material que aquele laboratório produz.
+- Identificar os laboratórios com melhor desempenho.
 
 Pode-se dizer também que ao atender o código de defesa do consumidor, as construtoras poderão entregar edificações mais seguras, duráveis e econômicas. 
 
