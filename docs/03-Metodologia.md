@@ -45,7 +45,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 - **In Progress** : Quando uma tarefa tiver sido iniciada, ela é movida para cá.
 - **Done** : nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para ser entregues ao usuário. Não há mais edições ou revisões necessárias, ele está agendado e pronto para a ação.
 
-O quadro kanban do grupo no Github está disponível através da URL [https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-1-e1-proj-web-t5-time-01-certificacoes-de-materiais/projects/1] e é apresentado, no estado atual, na Figura 2. A definição desta estrutura se baseou na proposta feita por Littlefield (2016).
+O quadro kanban do grupo no Github está disponível através da URL [https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t5-certificacao-de-materiais/projects/3] e é apresentado, no estado atual, na Figura 2. A definição desta estrutura se baseou na proposta feita por Littlefield (2016).
 
 
 ![Tela Kanban](img/Figura%202.PNG)
