@@ -1,20 +1,47 @@
 #
 # 10. Plano de Testes de Usabilidade
 
-O planejamento dos testes de usabilidade a serem realizados com usuários são descritos na Tabela a seguir.
+O objetivo dos testes de usabilidade é simular a utilização do sistema na perspectiva do usuário final, neste caso, representantes de construtoras e laboratórios relacionados ao setor da construção civil. Coletando dados que permitam mensurar a experiência  do público alvo, garantindo um sistema que atende à demanda do cliente de forma eficiente e satisfatória.
 
-- Objetivos do teste de usabilidade: o nosso teste de usabilidade tem por objetivo obter dados que permitam medir junto aos usuários o rendimento das funcionalidades disponibilizadas pelo site, identificando os possíveis problemas de estrutura e de informação além de outras deficiências de usabilidade.
+Faz parte do escopo dos testes repetí-los para diferentes tipos de plataformas, a fim de assegurar uma experiência homogênea e maior distribuição dos resultados.
 
-- Detalhes do público envolvido nos testes: possíveis usuários como colaboradores de construtoras e laboratórios relacionados ao setor da construção civil.
+O método de avaliação escolhido para os testes de usabilidade foi o de observação de uso assistido. Uma sessão de teste tem os seguintes componentes:
 
-- Roteiro detalhado das tarefas que foram desempenhadas pelos usuários:
+* Usuário: objeto do teste. Representante dos perfis alvo do sistema.
+* Facilitador: instrui e auxilia o usuário durante os testes.
+* Observador: responsável por registrar os indicadores de cada teste.
 
-| **Código do Teste** | **Localização do problema** | **Descrição do plano** | **Categoria** |
-| --- | --- | --- | --- |
-| Teste- 1 | Todo o site | É possível navegar pelas páginas do site? | Teste de navegabilidade |
-| Teste- 2 | Todo o site | Apresenta as informações relevantes sobre o site? | Teste de navegabilidade |
-| Teste- 3 | Todo o site | É possível visualizar as informações em diversos tamanhos de tela? | Teste de responsividade |
-| Teste- 4 | Pagina Login | Apresenta opção de recuperação de senha? | Teste de funcionalidade |
-| Teste- 5 | Pagina Cadastros | Apresenta um formulário de fácil entendimento? | Teste de cadastro |
-| Teste- 6 | Pagina Cadastros | Os cadastros são realizados com sucesso? A informação foi armazenada corretamente? | Teste de cadastro |
-| Teste- 7 | Pagina de Notícias | As notícias são relevantes e atualizadas? | Teste de busca/pesquisa |
+Abaixo, definição dos testes:
+
+| **Teste de Usabilidade 1 (TU-01)** |
+| --- | --- |
+| **Objetivo** | Mensurar o esforço e qualidade da experiência para realizar um cadastro no sistema. Certificar que as interações necessárias para realização do cadastro sejam acessíveis, rápidas e sem ambiguidade. | 
+| **Perfis** | Todos |
+| **Métricas** | Tempo de conclusão, números de passos, número de erros, reação do usuário. |
+| **Dinâmica** | Da página inicial, o facilitador solicita ao usuário realizar cadastro no sistema. Observadores registram tempo levado para navegar em cada sessão, preencher formulário, realizar cadastro. Registrar dúvidas, dificuldades e frustrações do usuário. Coletar opinião do usuário ao final.  |
+| **Condição de Sucesso** | Cadastro realizado em tempo aceitável (menor que 2 minutos). O usuário não teve dúvidas, cometeu erros ou solicitou apoio durante a tarefa. |
+
+| **Teste de Usabilidade 2 (TU-02)** |
+| --- | --- |
+| **Objetivo** | Mensurar o esforço e qualidade da experiência para encontrar um laboratório que emita certificações para um determinado material. Certificar que as interações necessárias para encontrar a informação desejada sejam acessíveis, rápidas e sem ambiguidade. Certificar que a informação encontrada é completa e satisfatória. |
+| **Perfis** | Fornecedor/prestador à procura de certificação. |
+| **Métricas** | Tempo de conclusão, números de passos, número de erros, reação do usuário, completude e qualidade da informação. |
+| **Dinâmica** | Da página inicial, o facilitador solicita ao usuário encontrar nome, contato e localidade de laboratório certificado para determinado material no sistema. Observadores registram tempo levado para navegar em cada sessão e encontrar informação desejada. Registrar dúvidas, dificuldades e frustrações do usuário. Coletar opinião do usuário ao final. |
+| **Condição de Sucesso** | Informação encontrada em tempo aceitável (menor que 2 minutos). O usuário não teve dúvidas, cometeu erros ou solicitou apoio durante a tarefa. |
+
+| **Teste de Usabilidade 3 (TU-03)** |
+| --- | --- |
+| **Objetivo** | Mensurar o esforço e qualidade da experiência para utilizar o portal de notícias do sistema. Certificar que as interações necessárias sejam rápidas e sem ambiguidade. |
+| **Perfis** | Todos |
+| **Métricas** | Tempo de conclusão, números de passos, número de erros, reação do usuário, completude e qualidade das informações. |
+| **Dinâmica** | Da página inicial, o facilitador solicita ao usuário encontrar uma informação que esteja no portal de notícias do sistema. Observadores registram tempo levado para encontrar informação desejada. Registrar dúvidas, dificuldades e frustrações do usuário. Coletar opinião do usuário ao final. |
+| **Condição de Sucesso** | Informação encontrada em tempo aceitável (menor que 2 minutos). O usuário não teve dúvidas, cometeu erros ou solicitou apoio durante a tarefa. |
+
+| **Teste de Usabilidade 4 (TU-04)** |
+| --- | --- |
+| **Objetivo** | Mensurar o esforço e qualidade da experiência alterar informação de cadastro. Certificar que o recurso para fazê-lo seja acessível e que as interações necessárias sejam fáceis e rápidas. |
+| **Perfis** | Todos |
+| **Métricas** | Tempo de conclusão, números de passos, número de erros, reação do usuário. |
+| **Dinâmica** | Da página inicial, o facilitador solicita ao usuário alterar uma informação em um cadastro do sistema. Observadores registram tempo gasto, erros cometidos e dificuldades encontradas para concluir a tarefa. Coletar opinião do usuário ao final. |
+| **Condição de Sucesso** | Informações alteradas com sucesso.  Processo finalizado em tempo aceitável (menor que 2 minutos). O usuário não teve dúvidas, cometeu erros ou solicitou apoio durante a tarefa. |
+
