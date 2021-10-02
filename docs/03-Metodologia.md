@@ -27,14 +27,16 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
 
 A equipe está organizada da seguinte maneira:
 
-- Scrum Master: Felippe Diniz
-- Product Owner: Bruno Medeiros
+- Scrum Master: Iago
+- Product Owner: Vanessa
 - Equipe de Desenvolvimento
   - Iago Goncalves Ferreira Nascimento
-  - Luísa Helena Gonçalves
+  - Renan
+  - Ludmila
+  - Joao
 - Equipe de Design
-  - Iago Goncalves Ferreira Nascimento
-  - Luísa Helena Gonçalves
+  - Joao
+  - Vanessa
 
 Para organização e distribuição das tarefas do projeto, a equipe está utilizando o Trello / Github estruturado com as seguintes listas:
 
@@ -57,6 +59,7 @@ A tarefas são ainda etiquetadas em função da natureza da atividade, onde pode
 - Testes
 - Bug
 - Inválido
+- Duvida
 
 ![Tela Labels](img/Figura%203.png)
 <center>Figura 3 - Tela Labels</center>
