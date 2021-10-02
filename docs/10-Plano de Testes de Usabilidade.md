@@ -13,7 +13,7 @@ O método de avaliação escolhido para os testes de usabilidade foi o de observ
 
 Abaixo, definição dos testes:
 
-| **Teste de Usabilidade 1 (TU-01)** |
+| **TU-01** | **Teste de Usabilidade 1** |
 | --- | --- |
 | **Objetivo** | Mensurar o esforço e qualidade da experiência para realizar um cadastro no sistema. Certificar que as interações necessárias para realização do cadastro sejam acessíveis, rápidas e sem ambiguidade. | 
 | **Perfis** | Todos |
@@ -21,7 +21,7 @@ Abaixo, definição dos testes:
 | **Dinâmica** | Da página inicial, o facilitador solicita ao usuário realizar cadastro no sistema. Observadores registram tempo levado para navegar em cada sessão, preencher formulário, realizar cadastro. Registrar dúvidas, dificuldades e frustrações do usuário. Coletar opinião do usuário ao final.  |
 | **Condição de Sucesso** | Cadastro realizado em tempo aceitável (menor que 2 minutos). O usuário não teve dúvidas, cometeu erros ou solicitou apoio durante a tarefa. |
 
-| **Teste de Usabilidade 2 (TU-02)** |
+| **TU-02** | **Teste de Usabilidade 2** |
 | --- | --- |
 | **Objetivo** | Mensurar o esforço e qualidade da experiência para encontrar um laboratório que emita certificações para um determinado material. Certificar que as interações necessárias para encontrar a informação desejada sejam acessíveis, rápidas e sem ambiguidade. Certificar que a informação encontrada é completa e satisfatória. |
 | **Perfis** | Fornecedor/prestador à procura de certificação. |
@@ -29,7 +29,7 @@ Abaixo, definição dos testes:
 | **Dinâmica** | Da página inicial, o facilitador solicita ao usuário encontrar nome, contato e localidade de laboratório certificado para determinado material no sistema. Observadores registram tempo levado para navegar em cada sessão e encontrar informação desejada. Registrar dúvidas, dificuldades e frustrações do usuário. Coletar opinião do usuário ao final. |
 | **Condição de Sucesso** | Informação encontrada em tempo aceitável (menor que 2 minutos). O usuário não teve dúvidas, cometeu erros ou solicitou apoio durante a tarefa. |
 
-| **Teste de Usabilidade 3 (TU-03)** |
+| **TU-03** | **Teste de Usabilidade 3** |
 | --- | --- |
 | **Objetivo** | Mensurar o esforço e qualidade da experiência para utilizar o portal de notícias do sistema. Certificar que as interações necessárias sejam rápidas e sem ambiguidade. |
 | **Perfis** | Todos |
@@ -37,7 +37,7 @@ Abaixo, definição dos testes:
 | **Dinâmica** | Da página inicial, o facilitador solicita ao usuário encontrar uma informação que esteja no portal de notícias do sistema. Observadores registram tempo levado para encontrar informação desejada. Registrar dúvidas, dificuldades e frustrações do usuário. Coletar opinião do usuário ao final. |
 | **Condição de Sucesso** | Informação encontrada em tempo aceitável (menor que 2 minutos). O usuário não teve dúvidas, cometeu erros ou solicitou apoio durante a tarefa. |
 
-| **Teste de Usabilidade 4 (TU-04)** |
+| **TU-04** | **Teste de Usabilidade 4** |
 | --- | --- |
 | **Objetivo** | Mensurar o esforço e qualidade da experiência alterar informação de cadastro. Certificar que o recurso para fazê-lo seja acessível e que as interações necessárias sejam fáceis e rápidas. |
 | **Perfis** | Todos |
