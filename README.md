@@ -11,7 +11,7 @@ O nosso site busca auxiliar as contrutoras, seus arquitetos e engenheiros a obte
 ## Integrantes
 
 * Iago Goncalves Ferreira Nascimento
-* Josão Pedro
+* João Pedro
 * Ludmilla Oliveira
 * Renan Gonçalves de Souza
 * Vanessa Aparecida
