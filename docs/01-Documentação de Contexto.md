@@ -36,7 +36,9 @@ após a escolha dos ensaios, fornecer todas as normas pertinentes e os laborató
 
 Empresas da construção civil estão cada vez mais precisando da certificação ISO 9001 e de apresentação de laudos técnicos atestando a qualidade dos materiais para poderem executar suas obras. 
 
-A falta de um sistema de informação seguro e atualizado sobre a certificação que as empresas de construção podem utilizar tem dificultado o acesso das empresas a financiamentos e credenciais para execução de obras públicas. 
+A falta de um sistema de informação seguro e atualizado sobre a certificação que as empresas de construção podem utilizar tem dificultado o acesso das empresas a financiamentos e credenciais para execução de obras públicas.
+
+Os laboratórios que fazem essas certificações hoje, não possuem uma plataforma de avaliação, o que dificulta a escolha do cliente.
 
 ## Público-Alvo
 
