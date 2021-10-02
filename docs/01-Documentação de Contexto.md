@@ -26,11 +26,15 @@ O objetivo geral deste trabalho é a criação de um site que apresente os diver
 
 Como objetivos específicos, podemos ressaltar: 
 
-fornecer funcionalidades que permitam escolher o material que precisa de certificação; 
+Fornecer funcionalidades que permitam escolher o material que precisa de certificação; 
 
-fornecer funcionalidades que após a escolha do material, para que o usuário possa escolher os ensaios desejados dentre uma lista de todos os ensaios possíveis; 
+Fornecer funcionalidade que permitam os laboratorios identificar quais o cclientes interessados;
 
-após a escolha dos ensaios, fornecer todas as normas pertinentes e os laboratórios que podem realizar os ensaios, com os contatos de cada um. 
+Fornecer funcionalidades que possam gerar informacoes sobre quais as caracteriscas comercias de cada laboratorio.
+
+Fornecer funcionalidades que após a escolha do material, para que o usuário possa escolher os ensaios desejados dentre uma lista de todos os ensaios possíveis; 
+
+Após a escolha dos ensaios, fornecer todas as normas pertinentes e os laboratórios que podem realizar os ensaios, com os contatos de cada um. 
  
 ## Justificativa
 
