@@ -1,12 +1,16 @@
-# Registro de Testes de Software
+#
+# 9. Registro de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
+Os resultados obtidos nos testes de software realizados com o objetivo de testar as funcionalidades do sistema estão descritos na Tabela a seguir.
 
-Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
+| **Registro de Teste** | **CT-01 – Realizar login no sistema** |
+| --- | --- |
+| **Saída esperada:** | Os mantedores do site devem conseguir ter acesso ao mesmo – login realizado corretamente. |
+| **Saída real do sistema:** | O login e efetuado sem erros levando os usuários aos devidos locais de acesso. |
+| **Registro de execução:** | Login realizado sem apresentar erros. |
 
-## Avaliação
-
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
-
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+| **Registro de Teste** | **CT-02 – Realizar cadastro de Laboratórios e Construtoras** |
+| --- | --- |
+| **Saída esperada:** | Dados submetidos devem ser salvos em um array gerado por código Java Script em Local Storage e apresentados na página Serviços como tabela |
+| **Saída real do sistema:** | A cada novo cadastro os dados do array são incrementados e os dados são apresentados na tabela da página em questão |
+| **Registro de execução:** | Cadastros realizados com sucesso e armazenados na própria página |

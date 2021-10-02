@@ -1,11 +1,20 @@
-# Plano de Testes de Usabilidade
+#
+# 10. Plano de Testes de Usabilidade
 
-O teste de usabilidade permite avaliar a qualidade da interface com o usuário da aplicação interativa. O Plano de Testes de Software é gerado a partir da especificação do sistema e consiste em casos de testes que deverão ser executados quando a implementação estiver parcial ou totalmente pronta.
+O planejamento dos testes de usabilidade a serem realizados com usuários são descritos na Tabela a seguir.
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
+- Objetivos do teste de usabilidade: o nosso teste de usabilidade tem por objetivo obter dados que permitam medir junto aos usuários o rendimento das funcionalidades disponibilizadas pelo site, identificando os possíveis problemas de estrutura e de informação além de outras deficiências de usabilidade.
 
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+- Detalhes do público envolvido nos testes: possíveis usuários como colaboradores de construtoras e laboratórios relacionados ao setor da construção civil.
+
+- Roteiro detalhado das tarefas que foram desempenhadas pelos usuários:
+
+| **Código do Teste** | **Localização do problema** | **Descrição do plano** | **Categoria** |
+| --- | --- | --- | --- |
+| Teste- 1 | Todo o site | É possível navegar pelas páginas do site? | Teste de navegabilidade |
+| Teste- 2 | Todo o site | Apresenta as informações relevantes sobre o site? | Teste de navegabilidade |
+| Teste- 3 | Todo o site | É possível visualizar as informações em diversos tamanhos de tela? | Teste de responsividade |
+| Teste- 4 | Pagina Login | Apresenta opção de recuperação de senha? | Teste de funcionalidade |
+| Teste- 5 | Pagina Cadastros | Apresenta um formulário de fácil entendimento? | Teste de cadastro |
+| Teste- 6 | Pagina Cadastros | Os cadastros são realizados com sucesso? A informação foi armazenada corretamente? | Teste de cadastro |
+| Teste- 7 | Pagina de Notícias | As notícias são relevantes e atualizadas? | Teste de busca/pesquisa |

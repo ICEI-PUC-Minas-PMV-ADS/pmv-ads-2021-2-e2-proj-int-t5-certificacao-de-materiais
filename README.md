@@ -1,27 +1,28 @@
-# TÍTULO DO PROJETO
+# Certificação de Materiais de Construção
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Eixo 2 - Projeto: Desenvolvimento de uma Aplicação Interativa`
 
-`SEMESTRE`
+`2021/1`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O nosso site busca auxiliar as contrutoras, seus arquitetos e engenheiros a obterem informações precisas sobre normalização, ensaios e laboratórios para atenderem as demandas tecnicas e o código de defesa do consumidor.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Vanessa
+* Joao
+* Iago Goncalves Ferreira Nascimento
+* Renan
+* Ludmilla Oliveira
 
 ## Orientador
 
-* Nome completo do professor 1
+* Joyce
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+O site criado está disponível no link: 
 
 # Documentação
 
@@ -31,7 +32,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 <li><a href="docs/03-Metodologia.md"> Metodologia</a></li>
 <li><a href="docs/04-Projeto de Interface.md"> Projeto de Interface</a></li>
 <li><a href="docs/05-Arquitetura da Solução.md"> Arquitetura da Solução</a></li>
-<li><a href="docs/06-Template Padrão da Aplicação.md"> Template Padrão da Aplicação</a></li>
+<li><a href="docs/06-Template padrão do Site.md"> Template padrão do Site</a></li>
 <li><a href="docs/07-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
 <li><a href="docs/08-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
 <li><a href="docs/09-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
@@ -43,7 +44,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+Os códigos do site estão disponiveis no link: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-1-e1-proj-web-t5-time-01-certificacoes-de-materiais/tree/main/src
 
 # Apresentação
 
