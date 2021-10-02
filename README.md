@@ -10,19 +10,19 @@ O nosso site busca auxiliar as contrutoras, seus arquitetos e engenheiros a obte
 
 ## Integrantes
 
-* Vanessa
-* Joao
 * Iago Goncalves Ferreira Nascimento
-* Renan
+* Josão Pedro
 * Ludmilla Oliveira
+* Renan Gonçalves de Souza
+* Vanessa Aparecida
 
 ## Orientador
 
-* Joyce
+* Joyce Carvalho
 
 ## Instruções de utilização
 
-O site criado está disponível no link: 
+
 
 # Documentação
 
