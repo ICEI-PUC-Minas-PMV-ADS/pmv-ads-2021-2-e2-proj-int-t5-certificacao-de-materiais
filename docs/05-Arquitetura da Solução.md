@@ -2,6 +2,16 @@
 
 Nesta seção são apresentados os detalhes técnicos da solução criada pela equipe, tratando dos componentes que fazem parte da solução e do ambiente de hospedagem da solução.
 
+### Diagrama de classes 
+
+### Modelo ER
+
+![Modelo ER](img/Diagrama_ER.png)
+<center>Figura 12 - Modelo ER</center>
+
+### Esquema Relacional
+
+
 ### Diagrama de Componentes
 
 Os componentes que fazem parte da solução são apresentados na Figura que se segue.
