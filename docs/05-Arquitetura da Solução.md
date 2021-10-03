@@ -4,12 +4,10 @@ Nesta seção são apresentados os detalhes técnicos da solução criada pela e
 
 ### Diagrama de classes 
 
-### Modelo ER
+### Modelo ER e Esquema Relacional
 
 ![Modelo ER](img/Diagrama_ER.png)
 <center>Figura 12 - Modelo ER</center>
-
-### Esquema Relacional
 
 
 ### Diagrama de Componentes
