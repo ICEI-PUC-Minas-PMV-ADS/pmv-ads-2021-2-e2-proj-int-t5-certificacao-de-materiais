@@ -71,3 +71,14 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 | RE-01 | O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 07/07/2021. |
 | RE-02 | O aplicativo deve se restringir às tecnologias básicas da Web no Front-end |
 | RE-03 | A equipe não pode subcontratar o desenvolvimento do trabalho. |
+
+
+### Diagrama de casos de uso
+
+Este diagrama busca apresentar o sistema na perspectiva do usuário, demonstrando as funcionalidades e os serviços oferecidos e quais usuários poderão utilizar cada funcionalidade.
+Esse diagrama tem por objetivo orientar,prioritariamente, a modelagem do sistema durante o levantamento e a análise de requisitos.
+O documento sendo consultado durante o processo de engenharia, poderá ser modificado e ser modelo-base para a modelagem de outros diagramas.
+
+
+![Fluxo de controle](img/use_case_padrao.JPG)
+<center>Figura 1 - Use Case</center>
