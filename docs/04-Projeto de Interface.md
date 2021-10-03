@@ -5,7 +5,7 @@ Dentre as preocupações para a montagem da interface do sistema, estamos estabe
 
 ## Diagrama de Fluxo
 
-Abaixo o fluxo de interação no sistema para os dois perfis principais do sistema.
+Os fluxogramas abaixo apresentam as interações com o sistema para cada perfil-cliente.
 
 ![Visão do Laboratório](img/23-9-2021-Fluxograma.png)
 ![Visão do Construtor](img/25-9-2021-Fluxograma2.png)
