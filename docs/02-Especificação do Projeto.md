@@ -49,7 +49,9 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 | RF-04 | O site deve permitir visualizar as informações de contatos do mantenedor do site.  | Média |
 | RF-05 | O site deve disponibilizar notícias sobre eventos, treinamentos e informações relevantes para o setor.  | Alta |
 | RF-06 | O site deve permitir o cadastro das construtoras (cliente) com as informações: nome da empresa, contato, localização.  | Alta |
-
+| RF-07 | O site deve conter local com arquivos PDF, incluindo orientações para o checklist na obtenção da certificação de materiais.| Média |
+| RF-08 | O site deve permitir update para alteração/inativação das empresas já cadastradas.| Média |
+ 
 ### Requisitos Não Funcionais
 
 A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá atender.
@@ -61,6 +63,7 @@ A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá 
 | RNF-03 | O site deverá ser integrado aos mecanismos de pesquisa na internet (Google, Bing, Yahoo Search). | Média |
 | RNF-04 | O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge). | Média |
 | RNF-05 | O funcionamento interno do site deverá ser desenvolvido utilizando algoritmos otimizados para a filtragem das opções solicitadas. | Baixa |
+| RNF-06 | O site deverá conter API para pesquisa de locais de acesso aos Organismos de Certificação de Produto (laboratórios). | Média |
 
 ### Restrições
 
@@ -68,8 +71,8 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 
 | **ID** | **Descrição** |
 | --- | --- |
-| RE-01 | O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 07/07/2021. |
-| RE-02 | O aplicativo deve se restringir às tecnologias básicas da Web no Front-end |
+| RE-01 | O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 07/11/2021. |
+| RE-02 | Fica condicionado ao perfil administrador  a inclusão/exclusão dos laboratórios e materiais cadastrados..  |
 | RE-03 | A equipe não pode subcontratar o desenvolvimento do trabalho. |
 
 
@@ -78,7 +81,6 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 Este diagrama busca apresentar o sistema na perspectiva do usuário, demonstrando as funcionalidades e os serviços oferecidos e quais usuários poderão utilizar cada funcionalidade.
 Esse diagrama tem por objetivo orientar,prioritariamente, a modelagem do sistema durante o levantamento e a análise de requisitos.
 O documento sendo consultado durante o processo de engenharia, poderá ser modificado e ser modelo-base para a modelagem de outros diagramas.
-
 
 ![Fluxo de controle](img/use_case_padrao.JPG)
 <center>Figura 1 - Use Case</center>
