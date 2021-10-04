@@ -16,3 +16,4 @@ A lista a seguir traz as referências utilizadas nesse trabalho. São elas:
 - [https://www.consultoriaiso.org/nbrs-regulam-materiais-na-construcao-civil/](https://www.consultoriaiso.org/nbrs-regulam-materiais-na-construcao-civil/)
 - [https://thorusengenharia.com.br/o-que-e-preciso-saber-para-atender-a-norma-de-desempenho-nbr-15575/](https://thorusengenharia.com.br/o-que-e-preciso-saber-para-atender-a-norma-de-desempenho-nbr-15575/)
 - [https://www.abntcatalogo.com.br](https://www.abntcatalogo.com.br/)
+- [https://www.iso.org/obp/ui/#iso:std:iso:9241:-11:ed-2:v1:en)(https://www.iso.org/obp/ui/#iso:std:iso:9241:-11:ed-2:v1:en)
