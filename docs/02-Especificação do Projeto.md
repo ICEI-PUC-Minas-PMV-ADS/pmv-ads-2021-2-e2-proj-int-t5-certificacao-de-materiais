@@ -43,15 +43,14 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 
 | **ID** | **Descrição** | **Prioridade** |
 | --- | --- | --- |
-| RF-01 | O site deve descrever os objetivos e funcionalidades desenvolvidos no projeto | Média |
-| RF-02 | O site deve fornecer informações referente as normas e certificações que devem ser cumpridas pelas construtoras.  | Média |
-| RF-03 | O site deve permitir o cadastro do perfil laboratórios (fornecedor) de ensaios com as informações: nome da empresa, contato, localização.  | Alta |
-| RF-04 | O site deve permitir visualizar as informações de contatos do mantenedor do site.  | Média |
-| RF-05 | O site deve disponibilizar notícias sobre eventos, treinamentos e informações relevantes para o setor.  | Alta |
-| RF-06 | O site deve permitir o cadastro das construtoras (cliente) com as informações: nome da empresa, contato, localização.  | Alta |
-| RF-07 | O site deve conter local com arquivos PDF, incluindo orientações para o checklist na obtenção da certificação de materiais.| Média |
-| RF-08 | O site deve permitir update para alteração/inativação das empresas já cadastradas.| Média |
- 
+| RF-01 | O sistema deve permite encontrar entidades certificadoras para determinado material | Alta |
+| RF-02 | O sistema deve fornecer informações referente as normas e certificações que devem ser cumpridas pelas construtoras.  | Baixa |
+| RF-03 | O sistema deve permitir o cadastro do perfil laboratórios (fornecedor) de ensaios com as informações: nome da empresa, contato, localização.  | Alta |
+| RF-04 | O sistema deve disponibilizar notícias sobre eventos, treinamentos e informações relevantes para o setor.  | Baixa |
+| RF-05 | O sistema deve conter local com arquivos PDF, incluindo orientações para o checklist na obtenção da certificação de materiais.| Baixa |
+| RF-06 | O sistema deve permitir update para alteração/inativação das empresas já cadastradas.| Alta |
+| RF-07 | O sistema deverá conter API para pesquisa de locais de acesso aos Organismos de Certificação de Produto (laboratórios). | Média | 
+
 ### Requisitos Não Funcionais
 
 A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá atender.
@@ -59,11 +58,11 @@ A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá 
 | **ID** | **Descrição** | **Prioridade** |
 | --- | --- | --- |
 | RNF-01 | Deverá ser providenciado o ambiente de hospedagem do site, no qual permitirá sua publicação na internet e a manutenção do mesmo durante seu ciclo de vida. (Provedor de nuvem, Github Pages, etc.) | Alta |
-| RNF-02 | A interface deverá utilizar linguagens front-end padrões (HMTM, CSS, JavaScript). | Alta |
-| RNF-03 | O site deverá ser integrado aos mecanismos de pesquisa na internet (Google, Bing, Yahoo Search). | Média |
-| RNF-04 | O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge). | Média |
+| RNF-02 | A interface deverá utilizar linguagens front-end padrões (HMTM, CSS, JavaScript). | Baixa |
+| RNF-03 | O sistema deverá ser integrado aos mecanismos de pesquisa na internet (Google, Bing, Yahoo Search). | Média |
+| RNF-04 | O sistema deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge). | Alta |
 | RNF-05 | O funcionamento interno do site deverá ser desenvolvido utilizando algoritmos otimizados para a filtragem das opções solicitadas. | Baixa |
-| RNF-06 | O site deverá conter API para pesquisa de locais de acesso aos Organismos de Certificação de Produto (laboratórios). | Média |
+| RNF-06 | O sistema deve comportar alternativas de acesso às suas funcionalidades de forma permitir delas a usuários com diferentes dificuldades | Alta |
 
 ### Restrições
 
