@@ -12,7 +12,7 @@ Os fluxogramas abaixo apresentam as interações com o sistema para cada perfil-
 
 ## Fluxo do Usuário
 
-O diagrama apresentado na figura abaixo mostra o mapa de interação do sistema. Cada uma das telas deste fluxo é detalhada na seção de Wireframes que se segue. Para visualizar o wireframe interativo, acesse o ambiente MarvelApp do projeto: [https://www.figma.com/proto/lvOX4AHY6Llk0QTFp7eyFj/Wireframe-Puc-minas?node-id=296%3A1342&scaling=scale-down&page-id=281%3A659&starting-point-node-id=296%3A1342].
+O diagrama apresentado na figura abaixo mostra o mapa de interação do sistema. Cada uma das telas deste fluxo é detalhada na seção de Wireframes que se segue. Para visualizar o wireframe interativo, acesse o ambiente Figma do projeto: [https://www.figma.com/proto/lvOX4AHY6Llk0QTFp7eyFj/Wireframe-Puc-minas?node-id=296%3A1342&scaling=scale-down&page-id=281%3A659&starting-point-node-id=296%3A1342].
 
 ![Fluxo do Usuario](img/flowmap.png)
 <center>Figura 4 - Fluxo de telas do usuário</center>
