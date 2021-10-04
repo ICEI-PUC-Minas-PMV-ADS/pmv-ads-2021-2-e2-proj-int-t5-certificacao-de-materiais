@@ -22,3 +22,10 @@ Os testes funcionais a serem realizados no site são descritos a seguir.
 | **Objetivo do Teste** | Verificar se os dados estão sendo armazenados corretamente no Banco de Dados |
 | **Passos** | 1) Acessar o Navegador e informar o endereço do Site2) Visualizar a página principal e selecionar a opção &quot;Cadastros&quot;3) Selecionar o tipo e preencher os campos solicitados4) Verificar se os dados foram armazenados no Banco de Dados |
 | **Critérios de Êxito** | Dados submetidos devem ser salvos no Banco de Dados |
+
+| **Caso de Teste** | **CT-03 – Localizar entidade Certificadora ** |
+| --- | --- |
+| **Requisitos Associados** | RF- 01: O sistema deve permite encontrar entidades certificadoras para determinado material |
+| **Objetivo do Teste** | Verificar se a funcionalidade principal do sistema está sendo atendida. |
+| **Passos** | 1) Acessar o Navegador e informar o endereço do Site2) Visualizar a página principal e selecionar a opção &quot;Certificações&quot;3) Pesquisa o material >
+| **Critérios de Êxito** | Retornada lista de entidades previamente registradas que emitam certificações àquele tipo de material |
