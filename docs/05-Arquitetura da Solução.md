@@ -4,7 +4,7 @@ Nesta seção são apresentados os detalhes técnicos da solução criada pela e
 
 ### Diagrama de classes 
 
-![Diagrama de classes](img/DIAGRAMA DE CLASSE717)
+![Diagrama de classes](img/DIAGRAMA DE CLASSE717.png)
 <center>Figura 12 - Diagrama de classe</center>
 
 ### Modelo ER e Esquema Relacional
