@@ -6,32 +6,15 @@ A definição exata do problema e os pontos mais relevantes a serem tratados nes
 
 As personas levantadas durante o processo de entendimento do problema são apresentadas nas Figuras que se seguem.
 
-|  **Tales Tavares**  ||
-| --- | --- |
-| **Dados** | **Motivações** |
-| **Idade:** 55 anos | Manter a empresa atualizada |
-| **Ocupação:** Proprietário de uma construtora | Abrir representações em outras cidades |
-| **Aplicativos que mais usa** | **Frustração** |
-| E-mail <br/> Facebook | Falta de informações sobre certificação |
-
-| **Marcio Marques**  ||
-| --- | --- |
-| **Dados** | **Motivação** |
-| **Idade:** 37 anos | Abrir uma construtora e incorporadora |
-| **Ocupação:** Engenheiro Civil |
-| **Aplicativos que mais usa** | **Frustração** |
-| Instagram <br/> Facebook <br/> LinkedIn| As empresas que prestam serviço na área de certificação são desatualizadas em termos de tecnologia |
+![Persona 1](https://user-images.githubusercontent.com/82919386/135911598-53d36060-f072-41af-8593-278a1669e83c.png)
+![Persona 2](https://user-images.githubusercontent.com/82919386/135911755-2a2d5af2-c392-41a1-a707-78c51af2be0f.png)
+![Persona 3](https://user-images.githubusercontent.com/82919386/135911785-d94805eb-2e2a-4275-ab97-5ee45617dcb0.png)
 
 ## Histórias de Usuários
 
 A partir da compreensão do dia a dia das personas identificadas para o projeto, foram registradas as seguintes histórias de usuários.
 
-| **Eu como … [PERSONA]** | … **quero/desejo …[O QUE]** | … **para .... [POR QUE]** |
-| --- | --- | --- |
-| Tales Tavares | encontrar uma empresa que tenha informações confiáveis sobre certificação de materiais | receber creditação de qualidade para minha construtora. |
-| Tales Tavares | ter a certeza de que estou recebendo informações confiáveis | evitar retrabalho e frustrações. |
-| Marcio Marques | ter convicção que as informações apresentadas são as mais atuais | que a minha (futura) construtora seja reconhecida como inovadora. |
-| Marcio Marques | firmar parceria com uma empresa inovadora | facilitar o processo de comunicação e troca de informações. |
+![User story](https://user-images.githubusercontent.com/82919386/135912040-c6c2e952-2749-4ca0-af80-9f46c84d744f.png)
 
 ## Requisitos do Projeto
 
