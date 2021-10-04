@@ -7,8 +7,8 @@ Dentre as preocupações para a montagem da interface do sistema, estamos estabe
 
 Os fluxogramas abaixo apresentam as interações com o sistema para cada perfil-cliente.
 
-![Visão do Laboratório](img/Fluxograma.png)
-![Visão do Construtor](img/Fluxograma2.png)
+![Visão do Laboratório](img/fluxograma-lab.png)
+![Visão do Construtor](img/fluxograma-engenheiro.png)
 
 ## Fluxo do Usuário
 
