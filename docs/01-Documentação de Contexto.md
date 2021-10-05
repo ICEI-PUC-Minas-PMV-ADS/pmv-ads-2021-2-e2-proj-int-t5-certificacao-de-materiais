@@ -44,6 +44,6 @@ Os laboratórios que fazem essas certificações hoje, não possuem uma platafor
 
 ## Público-Alvo
 
-Empresas ligadas à construção civil, Engenheiros Civis, Arquitetos e Laboratórios  de Certificação. 
+Empresas ligadas à construção civil, Engenheiros Civis, Arquitetos e Laboratórios de Certificação. 
 
 Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
