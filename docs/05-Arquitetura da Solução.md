@@ -9,7 +9,7 @@ Nesta seção são apresentados os detalhes técnicos da solução criada pela e
 
 ### Modelo ER e Esquema Relacional
 
-![Modelo ER](img/Diagrama_ER.png)
+![Modelo ER](img/DiagramaER.png)
 <center>Figura 12 - Modelo ER</center>
 
 
