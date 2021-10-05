@@ -13,12 +13,19 @@ Os testes funcionais a serem realizados no site são descritos a seguir.
 | --- | --- |
 | **Requisitos Associados** | RNF-01: Permitir a manutenção do site durante seu ciclo de vida. |
 | **Objetivo do Teste** | Verificar se a rotina de login está funcionando corretamente |
-| **Passos** | 1) Acessar o Navegador e informar o endereço do Site2) Visualizar a página principal e selecionar a opção &quot;Login&quot;3) Digitar e-mail e senha de acesso previamente cadastrados4) Clicar em Login |
+| **Passos** | 1) Acessar o Navegador e informar o endereço do Site 2) Visualizar a página principal e selecionar a opção &quot;Login&quot; 3) Digitar e-mail e senha de acesso previamente cadastrados4) Clicar em Login |
 | **Critérios de Êxito** | Os mantedores do site devem conseguir ter acesso ao mesmo – login realizado corretamente. |
 
-| **Caso de Teste** | **CT-02 – Realizar cadastro de Laboratórios e Construtoras** |
+| **Caso de Teste** | **CT-02 – Realizar cadastro de Laboratório** |
 | --- | --- |
-| **Requisitos Associados** | RF- 03: O site deve permitir o cadastro de laboratórios de ensaios.RF-09: O site deve permitir o cadastro das construtoras (cliente) com as informações: nome da empresa, responsável pelo projeto localização. |
-| **Objetivo do Teste** | Verificar se os dados estão sendo armazenados corretamente através do Java Script |
-| **Passos** | 1) Acessar o Navegador e informar o endereço do Site2) Visualizar a página principal e selecionar a opção &quot;Cadastros&quot;3) Selecionar o tipo e preencher os campos solicitados4) Verificar se os dados foram armazenados em Local Storage |
-| **Critérios de Êxito** | Dados submetidos devem ser salvos em um array gerado por código Java Script em Local Storage e apresentados na página Serviços como tabela |
+| **Requisitos Associados** | RF- 03: O site deve permitir o cadastro de laboratórios de ensaios. |
+| **Objetivo do Teste** | Verificar se os dados estão sendo armazenados corretamente no Banco de Dados |
+| **Passos** | 1) Acessar o Navegador e informar o endereço do Site 2) Visualizar a página principal e selecionar a opção &quot;Cadastros&quot; 3) Selecionar o tipo e preencher os campos solicitados4) Verificar se os dados foram armazenados no Banco de Dados |
+| **Critérios de Êxito** | Dados submetidos devem ser salvos no Banco de Dados |
+
+| **Caso de Teste** | **CT-03 – Localizar entidade Certificadora** |
+| --- | --- |
+| **Requisitos Associados** | RF- 01: O sistema deve permite encontrar entidades certificadoras para determinado material |
+| **Objetivo do Teste** | Verificar se a funcionalidade principal do sistema está sendo atendida. |
+| **Passos** | 1) Acessar o Navegador e informar o endereço do Site 2) Visualizar a página principal e selecionar a opção &quot;Certificações&quot; 3) Pesquisa o material >
+| **Critérios de Êxito** | Retornada lista de entidades previamente registradas que emitam certificações para aquele tipo de material |

@@ -3,7 +3,7 @@
 
 O objetivo dos testes de usabilidade é simular a utilização do sistema na perspectiva do usuário final, neste caso, representantes de construtoras e laboratórios relacionados ao setor da construção civil. Coletando dados que permitam mensurar a experiência  do público alvo, garantindo um sistema que atende à demanda do cliente de forma eficiente e satisfatória.
 
-Faz parte do escopo dos testes repetí-los para diferentes tipos de plataformas, a fim de assegurar uma experiência homogênea e maior distribuição dos resultados.
+Faz parte do escopo dos testes repetí-los para diferentes tipos de plataformas e diferentes perfis de usuário, a fim de assegurar uma experiência homogênea e a acessibilidade para difenrentes tipos de pessoas. 
 
 O método de avaliação escolhido para os testes de usabilidade foi o de observação de uso assistido. Uma sessão de teste tem os seguintes componentes:
 

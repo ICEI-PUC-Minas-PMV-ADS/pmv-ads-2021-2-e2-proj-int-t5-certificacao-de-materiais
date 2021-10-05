@@ -4,12 +4,13 @@ Nesta seção são apresentados os detalhes técnicos da solução criada pela e
 
 ### Diagrama de classes 
 
-### Modelo ER
+![Diagrama de classes](img/DIAGRAMA_CLASSES.png)
+<center>Figura 12 - Diagrama de classe</center>
+
+### Modelo ER e Esquema Relacional
 
 ![Modelo ER](img/Diagrama_ER.png)
 <center>Figura 12 - Modelo ER</center>
-
-### Esquema Relacional
 
 
 ### Diagrama de Componentes
@@ -24,11 +25,7 @@ A solução implementada conta com os seguintes módulos:
 
 - **Navegador** - Interface básica do sistema
   - **Páginas Web** - Conjunto de arquivos HTML, CSS, JavaScript e imagens que constituem a interface da aplicação hospedada na Web.
-  - **Local Storage** - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON. São eles:
-    - **Canais** - seções de notícias apresentadas
-    - **Comentários** - registro de opiniões dos usuários sobre as notícias
-    - **Preferidas** - lista de notícias mantidas para leitura e acesso posterior
-- **Bing News API** - plataforma que permite o acesso às notícias exibidas no site.
+  - **Banco de Dados** - armazenamento local, onde são implementados bancos de dados na linguagem SQL.
 - **Heroku** - local na Internet onde as páginas são mantidas e acessadas pelo navegador.
 
 ### Hospedagem
