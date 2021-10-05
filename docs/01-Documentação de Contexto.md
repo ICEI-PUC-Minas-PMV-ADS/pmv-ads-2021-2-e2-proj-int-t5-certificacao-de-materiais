@@ -28,8 +28,6 @@ Como objetivos específicos, podemos ressaltar:
 
 Fornecer funcionalidades que permitam escolher o material que precisa de certificação; 
 
-Fornecer funcionalidade que permite os laboratórios identificar quais o clientes interessados;
-
 Fornecer funcionalidades que possam gerar informações sobre quais as características comerciais de cada laboratório;
 
 Fornecer funcionalidades que após a escolha do material, para que o usuário possa escolher os ensaios desejados dentre uma lista de todos os ensaios possíveis; 
