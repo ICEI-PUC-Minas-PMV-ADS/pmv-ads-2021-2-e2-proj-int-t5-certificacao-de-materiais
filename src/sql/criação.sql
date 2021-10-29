@@ -1,7 +1,7 @@
 -- Cria Base e Tabelas
 
 CREATE DATABASE CertMat;
-USER CertMat;
+USE CertMat;
 
 CREATE TABLE Laboratorio (
     CodLaboratorio int(3) NOT NULL AUTO_INCREMENT,
