@@ -22,6 +22,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     
+    echo "<center>";
     echo "<h2> Laboratórios cadastrados que emitem certificação para: " . $material;
     echo "<table border=1> <tr> <th> Laboratório </th> <th> Endereço </th> </tr>";
 
@@ -33,8 +34,13 @@ if ($result->num_rows > 0) {
     echo "</table>";
 
 } else {
-    echo "0 resultados";
+    echo "<center> <p> 0 resultados </p>";
 }
 $conn->close();
 
+echo "<p><form action='consulta.php' method='post'> <input type='text' name='material' placeholder='Informe aqui o Material'><br><br> <input type='submit' value='Nova Busca'> </form> </center>";
+
+
 ?>
+
+
