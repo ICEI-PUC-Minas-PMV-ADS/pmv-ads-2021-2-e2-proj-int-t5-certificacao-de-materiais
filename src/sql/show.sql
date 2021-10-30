@@ -2,6 +2,9 @@
 
 USE CertMat;
 
-SELECT * FROM Laboratorio;
-SELECT * FROM Material;
-SELECT * FROM Certificacao;
+-- SELECT * FROM Laboratorio;
+-- SELECT * FROM Material;
+-- SELECT * FROM Certificacao;
+
+SELECT Contato FROM Laboratorio WHERE Nome IN 
+(SELECT Laboratorio_Nome FROM Certificacao WHERE Material_Nome = "Betume");
