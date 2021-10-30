@@ -14,16 +14,17 @@ if ($conn->connect_error) {
 } 
 
 // Query.
-$sql = "SELECT * FROM Laboratorio";
+//$sql = "SELECT * FROM Laboratorio";
+$sql = "SELECT Nome, Contato FROM Laboratorio WHERE Nome IN (SELECT Laboratorio_Nome FROM Certificacao WHERE Material_Nome = 'Aço');";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // saída de cada linha.
   while($row = $result->fetch_assoc()) {
-    echo "Nome: " . $row["Nome"]. " - Contato: " . $row["Contato"]. "<br>";
+    echo "Laboratório: " . $row["Nome"]. " - Endereço: " . $row["Contato"]. "<br>";
   }
 } else {
-  echo "0 results";
+  echo "0 resultados";
 }
 $conn->close();
 
