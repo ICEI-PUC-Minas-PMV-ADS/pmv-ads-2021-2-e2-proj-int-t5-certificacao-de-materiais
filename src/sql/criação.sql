@@ -26,7 +26,6 @@ CREATE TABLE Certificacao (
     Material_ID int NOT NULL,
     Nome varchar(255),
 
-    PRIMARY KEY(ID),
     CONSTRAINT Certificacao_Laboratorio FOREIGN KEY (Laboratorio_ID) REFERENCES Laboratorio(ID),
     CONSTRAINT Certificacao_Material FOREIGN KEY (Material_ID) REFERENCES Material(ID),
     CONSTRAINT Certificacao_ID UNIQUE (Laboratorio_ID, Material_ID)
