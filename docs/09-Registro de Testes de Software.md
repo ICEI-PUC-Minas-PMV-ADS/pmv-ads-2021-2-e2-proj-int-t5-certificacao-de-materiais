@@ -13,8 +13,10 @@
 
 ![ct-03-01](img/teste_ct-03-01.PNG)
 <center>Etapa 1</center>
+
 ![ct-03-01](img/teste_ct-03-02.PNG)
 <center>Etapa 2</center>
+
 ![ct-03-01](img/teste_ct-03-03.PNG)
 <center>Etapa 3</center>
 
