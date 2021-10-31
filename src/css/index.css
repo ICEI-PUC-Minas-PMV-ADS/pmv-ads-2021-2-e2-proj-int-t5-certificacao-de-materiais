@@ -11,9 +11,10 @@ body {
         "footer footer footer";
 
     grid-template-columns: 40vh auto auto;
-    grid-template-rows: 155px 4vh 4vh 4vh 4vh auto 20vh;
+    grid-template-rows: 155px 4vh 4vh 4vh 4vh auto 15vh;
 
-    text-align: center; 
+    text-align: center;
+    background-color: gray; 
 }
 
 p {margin: 0;}
@@ -29,12 +30,13 @@ p {margin: 0;}
     background-color: rgb(255, 153, 102);
 }
 
-.o-header { grid-area: header; float: left;}
-.o-footer { grid-area: footer; text-indent: 0;}
+.o-header {grid-area: header;}
+.o-footer {grid-area: footer;}
 
-.o-footer, .o-header {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 153, 102);
+.o-header, .o-footer {
+    text-indent: 0;
+    background-color: black;
+    color: white;
 }
 
 .clickable {
@@ -48,6 +50,5 @@ p {margin: 0;}
 
 #content {
     width: 100%;
-    min-height: 45vh;
+    min-height: 55vh;
 }
-
