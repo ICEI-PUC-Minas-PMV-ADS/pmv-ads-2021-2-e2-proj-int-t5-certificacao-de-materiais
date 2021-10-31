@@ -32,7 +32,6 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 | RF-04 | O sistema deve disponibilizar notícias sobre eventos, treinamentos e informações relevantes para o setor.  | Baixa |
 | RF-05 | O sistema deve conter local com arquivos PDF, incluindo orientações para o checklist na obtenção da certificação de materiais.| Baixa |
 | RF-06 | O sistema deve permitir update para alteração/inativação das empresas já cadastradas.| Alta |
-| RF-07 | O sistema deverá conter API para pesquisa de locais de acesso aos Organismos de Certificação de Produto (laboratórios). | Média | 
 
 ### Requisitos Não Funcionais
 
