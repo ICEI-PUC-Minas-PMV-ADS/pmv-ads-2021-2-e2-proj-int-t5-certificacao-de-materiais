@@ -12,10 +12,10 @@
 ### Evidências
 
 ![ct-03-01](img/teste_ct-03-01.PNG)
-<cente>Etapa 1</center>
+<center>Etapa 1</center>
 ![ct-03-01](img/teste_ct-03-02.PNG)
-<cente>Etapa 2</center>
+<center>Etapa 2</center>
 ![ct-03-01](img/teste_ct-03-03.PNG)
-<cente>Etapa 3</center>
+<center>Etapa 3</center>
 
 
