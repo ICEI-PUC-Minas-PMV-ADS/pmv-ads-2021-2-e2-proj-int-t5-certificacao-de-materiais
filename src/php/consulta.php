@@ -18,7 +18,6 @@ if ($conn->connect_error) {
 } 
 
 // Query.
-//$sql = "SELECT * FROM Laboratorio";
 $sql = "SELECT Nome, Contato FROM Laboratorio WHERE Nome IN (SELECT Laboratorio_Nome FROM Certificacao WHERE Material_Nome = '" . $material . "');";
 $result = $conn->query($sql);
 
@@ -42,7 +41,7 @@ if ($material == "") {
 }
 $conn->close();
 
-echo "<p><form action='consulta.php' method='post'> <input type='text' name='material' placeholder='Informe aqui o Material'><br><br> <input type='submit' value='Nova Busca'> </form> </center>";
+echo "<p><form action='consulta.php' method='post'> <input type='text' name='material' placeholder='Informe aqui o Material'><img src='../img/help.png' title='Ex.: areia, aço, betume...' alt='ajuda'><br><br> <input type='submit' value='Nova Busca'> </form> </center>";
 echo "</body> </html>";
 
 ?>
