@@ -1,6 +1,6 @@
 body {
     display: grid;
-    grid-gap: 2px;
+    grid-gap: 1px;
     grid-template-areas:
         "header header header"
         "cons main main"
@@ -11,7 +11,7 @@ body {
         "footer footer footer";
 
     grid-template-columns: 40vh auto auto;
-    grid-template-rows: 155px 4vh 4vh 4vh 4vh 20vh 20vh;
+    grid-template-rows: 155px 4vh 4vh 4vh 4vh auto 20vh;
 
     text-align: center; 
 }
@@ -29,7 +29,7 @@ p {margin: 0;}
     background-color: rgb(255, 153, 102);
 }
 
-.o-header { grid-area: header;}
+.o-header { grid-area: header; float: left;}
 .o-footer { grid-area: footer; text-indent: 0;}
 
 .o-footer, .o-header {
