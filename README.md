@@ -37,8 +37,9 @@ O nosso site busca auxiliar as contrutoras, seus arquitetos e engenheiros a obte
 <li><a href="docs/08-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
 <li><a href="docs/09-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
 <li><a href="docs/10-Plano de Testes de Usabilidade.md"> Plano de Testes de Usabilidade</a></li>
-<li><a href="docs/11-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
-<li><a href="docs/12-Referências.md"> Referências</a></li>
+<li><a href="docs/11-Registro de Testes de usabilidade.md"> Registro de Testes de Usabilidade</a></li>
+<li><a href="docs/12-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
+<li><a href="docs/13-Referências.md"> Referências</a></li>
 </ol>
 
 # Código
