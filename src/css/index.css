@@ -14,21 +14,27 @@ body {
     text-align: center; 
 }
 
-.o-header {
-    grid-area: header;
+p {margin: 0;}
+
+.o-header { grid-area: header;}
+.o-footer { grid-area: footer; text-indent: 0;}
+
+.o-footer, .o-header {
     background-color: rgb(0, 0, 0);
+    color: rgb(255, 153, 102);
 }
+
 
 .o-left {
     grid-area: menu;
     background-color: rgb(255, 153, 102);
 }
 
-.o-footer {grid-area: footer; text-indent: 0;}
+.o-main { grid-area: main;}
 
 #content {
     width: 100%;
-    min-height: 30vh;
+    min-height: 45vh;
 }
 
 p {margin: 0;}
