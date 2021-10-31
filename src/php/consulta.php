@@ -1,5 +1,7 @@
 <?php
 
+echo "<html><head> <link rel='stylesheet' href='../css/subpages.css'> <meta charset='UTF-8'> </head><body>";
+
 $servername = "localhost";
 $username = "renan";
 $password = "MySQL-SGBD@1989";
@@ -41,8 +43,6 @@ if ($material == "") {
 $conn->close();
 
 echo "<p><form action='consulta.php' method='post'> <input type='text' name='material' placeholder='Informe aqui o Material'><br><br> <input type='submit' value='Nova Busca'> </form> </center>";
-
+echo "</body> </html>";
 
 ?>
-
-
