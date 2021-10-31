@@ -20,10 +20,12 @@ if ($conn->connect_error) {
 $sql = "SELECT Nome, Contato FROM Laboratorio WHERE Nome IN (SELECT Laboratorio_Nome FROM Certificacao WHERE Material_Nome = '" . $material . "');";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($material == "") {
+    echo "<center> <p> Campo de pesquisa não pode ser vazio.</p>";
+}elseif ($result->num_rows > 0) {
     
     echo "<center>";
-    echo "<h2> Laboratórios cadastrados que emitem certificação para: " . $material;
+    echo "<p> Laboratórios cadastrados que emitem certificação para " . $material . ":</p>";
     echo "<table border=1> <tr> <th> Laboratório </th> <th> Endereço </th> </tr>";
 
     // saída de cada linha.
@@ -34,7 +36,7 @@ if ($result->num_rows > 0) {
     echo "</table>";
 
 } else {
-    echo "<center> <p> 0 resultados </p>";
+    echo "<center> <p> 0 resultados para " . $material . ".</p>";
 }
 $conn->close();
 
