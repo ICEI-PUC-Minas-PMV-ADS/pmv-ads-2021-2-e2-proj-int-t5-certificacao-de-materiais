@@ -41,7 +41,7 @@ if ($material == "") {
 }
 $conn->close();
 
-echo "<p><form action='consulta.php' method='post'> <input type='text' name='material' placeholder='Informe aqui o Material'> <br><br> <input class='clickable' type='submit' value='Nova Busca'> </form> </center>";
+echo "<p><form action='consulta.php' method='post'> <input type='text' name='material' title='Ex.: areia, cimento...' placeholder='Informe aqui o Material'> <br><br> <input class='clickable' type='submit' value='Nova Busca'> </form> </center>";
 echo "</body> </html>";
 
 ?>
