@@ -4,10 +4,12 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/subpages.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/6ec418e653.js" crossorigin="anonymous"></script>
+<script src="script/subpages.js"></script>
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
@@ -62,6 +64,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 
 <div class="w3-content w3-justify w3-text-grey w3-padding-64">
+  <h2 class="w3-text-light-grey">Consulta Material</h2>
+  <hr style="width:200px" class="w3-opacity">
+
+  Informe no campo abaixo para o material para qual deseja encontrar entidades certificadoras.<br><br>
+  <form action="php/consulta.php" method="post">
+      <input type="text" name="material" title="Ex.: areia, cimento..." placeholder="Informe aqui o Material"> <img class="help clickable" src="img/help.png" title="Clique para obter ajuda" alt="ajuda"><br><br>
+      <input class="clickable" type="submit" value="Procurar">
+  </form>
+</div>
+<!-- <div class="w3-content w3-justify w3-text-grey w3-padding-64">
     <h2 class="w3-text-light-grey">Consulta Laboratorios</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>Na lista abaixo voce pode consulta um dos laboratorios associados.
@@ -130,7 +142,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     }
     </script>
     
-</div>
+</div> -->
 
 
 
