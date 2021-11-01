@@ -7,15 +7,15 @@
 
 ### Resultados
 
-Os formulário preenchidos são acessados em:
-[Participante 1](forms/Rododolfo_formulário_TU-02.pdf)
-[Participante 2](forms/Guilherme_formulário_TU-02.pdf)
+* Os formulário preenchidos são acessados em:
+ [Participante 1](forms/Rodolfo_questionário_TU-02.pdf)
+ [Participante 2](forms/Guilherme_questionário_TU-02.pdf)
 
-Todos os participantes encontraram as informações solicitadas.
-Nenhum levou mais de 1 minuto em cada questão.
-Não foi relatada nenhuma dificuldade em cumprir a tarefa.
-Não foi solicitado apoio ou feito questionamento adicional durante o teste.
-Apesar da aplicação contar com sessão de ajuda, nenhum dos participantes fez uso desta.
+* Todos os participantes encontraram as informações solicitadas.
+* Nenhum levou mais de 1 minuto em cada questão.
+* Não foi relatada nenhuma dificuldade em cumprir a tarefa.
+* Não foi solicitado apoio ou feito questionamento adicional durante o teste.
+* Apesar da aplicação contar com sessão de ajuda, nenhum dos participantes fez uso desta.
 
 ### Conclusões
 
