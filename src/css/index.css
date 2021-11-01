@@ -10,10 +10,9 @@ body {
         "empty main main"
         "footer footer footer";
 
-    grid-template-columns: 40vh auto auto;
+    grid-template-columns: 202px auto auto;
     grid-template-rows: 155px 4vh 4vh 4vh 4vh auto 15vh;
 
-    text-align: center;
     background-color: gray; 
 }
 
@@ -28,10 +27,18 @@ p {margin: 0;}
 
 .o-con, .o-labs, .o-news, .o-about, .o-empty {
     background-color: rgb(255, 153, 102);
+    text-align: right;
+    padding-right: 10px;
 }
 
-.o-header {grid-area: header;}
-.o-footer {grid-area: footer;}
+.o-header {
+    grid-area: header;
+    padding-left: 40px;
+}
+.o-footer {
+    grid-area: footer;
+    text-align: center;
+}
 
 .o-header, .o-footer {
     text-indent: 0;
@@ -44,7 +51,6 @@ p {margin: 0;}
     font-family: sans-serif;
     font-size: large;
     color: white;
-    text-align: center;
     font-weight: bold;
 }
 
