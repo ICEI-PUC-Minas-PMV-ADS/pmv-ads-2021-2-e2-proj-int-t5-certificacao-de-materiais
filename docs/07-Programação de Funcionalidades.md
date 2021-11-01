@@ -64,5 +64,5 @@ CREATE TABLE Certificacao (
 
 ### **Instruções de acesso**
 
-1. Abra um navegador de Internet e informe a seguinte URL: [https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2021-1-e1-proj-web-t5-time-01-certificacoes-de-materiais/src/index.html](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2021-1-e1-proj-web-t5-time-01-certificacoes-de-materiais/src/index.html)
+1. Abra um navegador de Internet e informe a URL do projeto (ainda não publicado).
 2. A tela de Consulta é a página padrão exibida pelo site.
