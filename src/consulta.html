@@ -2,13 +2,15 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/subpages.css">
+        <script src="script/jquery-3.6.0.min.js"></script>
+        <script src="script/subpages.js"></script>
         <meta charset="UTF-8">
     </head>
 <body>
     <center>
     Informe no campo abaixo para o material para qual deseja encontrar entidades certificadoras.<br><br>
     <form action="php/consulta.php" method="post">
-        <input type="text" name="material" placeholder="Informe aqui o Material"> <img class="help" src="img/help.png" title="Ex.: areia, aço, betume..." alt="ajuda"><br><br>
+        <input type="text" name="material" placeholder="Informe aqui o Material"> <img class="help clickable" src="img/help.png" title="Ex.: areia, aço, betume..." alt="ajuda"><br><br>
         <input class="clickable" type="submit" value="Procurar">
     </form>
     </center>
