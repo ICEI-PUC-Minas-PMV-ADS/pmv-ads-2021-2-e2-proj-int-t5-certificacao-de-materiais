@@ -13,7 +13,7 @@ $(document).ready(function(){
     });
 
     $(".clickable").mouseover(function () {
-        $(this).css("background-color", "rgb(204, 102, 0)");
+        $(this).css("background-color", "rgb(77, 77, 255)");
     });
     $(".clickable").mouseleave(function () {
         $(this).css("background-color", "rgb(255, 153, 102)");

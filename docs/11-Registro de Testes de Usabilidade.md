@@ -40,5 +40,5 @@ INSERT INTO Certificacao (Laboratorio_Nome, Material_Nome) VALUES ("LAB-1", "Bet
 ### Conclusões
 
 Apesar dos resultados positivos, os teste foram feitos com apenas dois usuário, nenhum deles da demografia desejada e ambos com intimidade alta com aplicações WEB.
-Necessário uma amostra maior de participantes.
+Necessário uma amostra maior e mais diversa de participantes.
 
