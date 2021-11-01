@@ -3,11 +3,11 @@ body {
     grid-gap: 1px;
     grid-template-areas:
         "header header header"
-        "cons main main"
-        "labs main main"
-        "news main main"
-        "about main main"
-        "empty main main"
+        "menu main main"
+        "menu main main"
+        "menu main main"
+        "menu main main"
+        "menu main main"
         "footer footer footer";
 
     grid-template-columns: 202px auto auto;
@@ -18,17 +18,26 @@ body {
 
 p {margin: 0;}
 
-.o-main { grid-area: main;}
-.o-con { grid-area: cons;} 
-.o-labs { grid-area: labs;}
-.o-news { grid-area: news;}
-.o-about { grid-area: about;}
-.o-empty { grid-area: empty;}
+.o-menu {
+    white-space: nowrap; 
+    background-color: rgb(255, 153, 102)
+}
 
-.o-con, .o-labs, .o-news, .o-about, .o-empty {
+.o-main {grid-area: main;}
+.o-con {grid-area: cons;} 
+.o-labs {grid-area: labs;}
+.o-news {grid-area: news;}
+.o-about {grid-area: about;}
+.o-menu {grid-area: menu;}
+
+.o-con, .o-labs, .o-news, .o-about {
     background-color: rgb(255, 153, 102);
+    box-shadow: 2px 2px rgb(255, 51, 0);
+    border-radius: 25px;
     text-align: right;
     padding-right: 10px;
+    margin-top: 2px;
+    white-space: normal;
 }
 
 .o-header {
