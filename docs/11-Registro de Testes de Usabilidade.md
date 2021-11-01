@@ -2,8 +2,28 @@
 ## TU-02
 
 * **Objetivo:** Mensurar o esforço e qualidade da experiência para encontrar um laboratório que emita certificações para um determinado material. Certificar que as interações necessárias para encontrar a informação desejada sejam acessíveis, rápidas e sem ambiguidade. Certificar que a informação encontrada é completa e satisfatória.
-* **Organização:** O Teste foi reproduzido via acesso remoto com dois voluntários separadamente. Foi apresentado a cada a interface do sistema sem mais explicações de seus componentes. Foi compartilhada uma cópia e solicitado o preenchimento do seguinte formulário digital:[template_formulário_TU-03](forms/template_formulário_TU-03.pdf)  
+* **Organização:** O Teste foi reproduzido via acesso remoto com dois voluntários separadamente. Foi apresentado a cada a interface do sistema sem mais explicações de seus componentes. Foi compartilhada uma cópia e solicitado o preenchimento do seguinte formulário digital: [template_questionário_TU-02](forms/template_questionário_TU-02.pdf)  
 
+Para os testes, o banco da aplicação foi preenchido com as seguintes informações:
+
+```sql
+USE CertMat;
+
+INSERT INTO Laboratorio (Nome, Contato) VALUES ("INMETRO", "Avenida Afonso Pena, Nº 666, Belo Horizonte, MG, CEP: 34800-000");
+INSERT INTO Laboratorio (Nome, Contato) VALUES ("LAB-1", "Avenida Brasil, Nº 420, Outro Amarelo, TU, CEP: 10000-000");
+
+INSERT INTO Material (Nome) VALUES ("Aço");
+INSERT INTO Material (Nome) VALUES ("Areia");
+INSERT INTO Material (Nome) VALUES ("Cimento");
+INSERT INTO Material (Nome) VALUES ("Betume");
+
+INSERT INTO Certificacao (Laboratorio_Nome, Material_Nome) VALUES ("INMETRO", "Aço");
+INSERT INTO Certificacao (Laboratorio_Nome, Material_Nome) VALUES ("INMETRO", "Areia");
+INSERT INTO Certificacao (Laboratorio_Nome, Material_Nome) VALUES ("INMETRO", "Cimento");
+
+INSERT INTO Certificacao (Laboratorio_Nome, Material_Nome) VALUES ("LAB-1", "Aço");
+INSERT INTO Certificacao (Laboratorio_Nome, Material_Nome) VALUES ("LAB-1", "Betume");
+```
 
 ### Resultados
 
