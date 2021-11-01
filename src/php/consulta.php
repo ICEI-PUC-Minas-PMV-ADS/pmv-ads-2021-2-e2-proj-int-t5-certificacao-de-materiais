@@ -22,7 +22,7 @@ $sql = "SELECT Nome, Contato FROM Laboratorio WHERE Nome IN (SELECT Laboratorio_
 $result = $conn->query($sql);
 
 if ($material == "") {
-    echo "<center> <p> Campo de pesquisa não pode ser vazio.</p>";
+    echo "<center> <p> É necessário informar um material no campo abaixo.</p>";
 }elseif ($result->num_rows > 0) {
     
     echo "<center>";
@@ -37,7 +37,9 @@ if ($material == "") {
     echo "</table>";
 
 } else {
-    echo "<center> <p> 0 resultados para " . $material . ".</p>";
+    echo "<center><p> 0 resultados encontrados para " . $material . ".</p>";
+    echo "<center><p> É possível que nenhum laboratório cadastrado em nosso banco emita certificações para este material.</p></center>";
+    echo "<center>Porém, certifique-se que o nome informado está correto.</center>";
 }
 $conn->close();
 
