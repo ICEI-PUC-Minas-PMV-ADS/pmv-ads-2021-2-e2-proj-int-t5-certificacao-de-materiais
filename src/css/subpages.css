@@ -1,3 +1,4 @@
-body {
-    background-color: white;
-}
+body {background-color: white;}
+
+.help {cursor: help;}
+.clickable {cursor: pointer;}
