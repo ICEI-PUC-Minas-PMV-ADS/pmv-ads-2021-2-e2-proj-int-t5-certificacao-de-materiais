@@ -4,7 +4,7 @@ echo "<html><head> <link rel='stylesheet' href='../css/subpages.css'><script src
 
 $servername = "localhost";
 $username = "public_user";
-$password = "EEFKrcI51NdI";
+$password = "EEFKrc!!51NdI";
 $dbname = "CDM";
 
 $material = $_POST["material"];

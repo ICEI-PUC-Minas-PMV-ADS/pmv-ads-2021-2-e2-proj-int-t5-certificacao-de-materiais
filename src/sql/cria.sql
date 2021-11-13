@@ -5,8 +5,8 @@ CREATE DATABASE CDM;
 
 -- Cria usuários
 
-CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrcI51NdI';
-GRANT SELECT ON CDM.Laboratorio, CDM.Certificacao TO 'public_user';
+CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrc!!51NdI';
+GRANT SELECT ON CDM.* TO 'public_user'@'localhost';
 
 -- Cria estrutura do banco
 
