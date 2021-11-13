@@ -3,9 +3,9 @@
 echo "<html><head> <link rel='stylesheet' href='../css/subpages.css'><script src='script/jquery-3.6.0.min.js'></script><script src='script/subpages.js'></script> <meta charset='UTF-8'> </head><body>";
 
 $servername = "localhost";
-$username = "renan";
-$password = "MySQL-SGBD@1989";
-$dbname = "CertMat";
+$username = "public_user";
+$password = "EEFKrcI51NdI";
+$dbname = "CDM";
 
 $material = $_POST["material"];
 

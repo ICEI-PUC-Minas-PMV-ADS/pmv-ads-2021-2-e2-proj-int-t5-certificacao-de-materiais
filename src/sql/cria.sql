@@ -1,11 +1,16 @@
 -- Começa do zero
 
-DROP DATABASE IF EXISTS CertMat;
+DROP DATABASE IF EXISTS CDM;
+CREATE DATABASE CDM;
 
--- Cria Base e Tabelas
+-- Cria usuários
 
-CREATE DATABASE CertMat;
-USE CertMat;
+CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrcI51NdI';
+GRANT SELECT ON CDM.Laboratorio, CDM.Certificacao TO 'public_user';
+
+-- Cria estrutura do banco
+
+USE CDM;
 
 CREATE TABLE Laboratorio (
     Nome varchar(255) NOT NULL, 
