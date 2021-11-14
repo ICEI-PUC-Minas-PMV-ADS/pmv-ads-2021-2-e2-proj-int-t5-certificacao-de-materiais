@@ -1,6 +1,6 @@
 <?php
 //Conexão com banco
-require_once "config.php";
+require_once "db_connect.php";
 
 echo "<html><head> <link rel='stylesheet' href='../css/subpages.css'><script src='script/jquery-3.6.0.min.js'></script><script src='script/subpages.js'></script> <meta charset='UTF-8'> </head><body>";
 
