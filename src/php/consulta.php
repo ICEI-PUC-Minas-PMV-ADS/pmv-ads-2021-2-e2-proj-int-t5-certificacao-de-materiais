@@ -1,25 +1,15 @@
 <?php
+//Conexão com banco
+require_once "config.php";
 
 echo "<html><head> <link rel='stylesheet' href='../css/subpages.css'><script src='script/jquery-3.6.0.min.js'></script><script src='script/subpages.js'></script> <meta charset='UTF-8'> </head><body>";
 
-$servername = "localhost";
-$username = "public_user";
-$password = "EEFKrc!!51NdI";
-$dbname = "CDM";
-
+// Material recebido via POST
 $material = $_POST["material"];
-
-// Cria conexão.
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Checa conexão.
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 // Query.
 $sql = "SELECT Nome, Contato FROM Laboratorio WHERE Nome IN (SELECT Laboratorio_Nome FROM Certificacao WHERE Material_Nome = '" . $material . "');";
-$result = $conn->query($sql);
+$result = $mysqli->query($sql);
 
 if ($material == "") {
     echo "<center> <p> É necessário informar um material no campo abaixo.</p>";
