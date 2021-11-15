@@ -6,7 +6,7 @@ CREATE DATABASE CDM;
 -- Cria usuários
 
 CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrc!!51NdI';
-GRANT SELECT ON CDM.* TO 'public_user'@'localhost';
+GRANT SELECT, INSERT ON CDM.* TO 'public_user'@'localhost';
 
 -- Cria estrutura do banco
 
@@ -27,6 +27,12 @@ CREATE TABLE Material (
     PRIMARY KEY(Nome)
 );
 
+CREATE TABLE Usuario (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	username VARCHAR(20) NOT NULL UNIQUE,
+	password varchar(20) NOT NULL
+);
+
 -- Junction Laboratorio/Material
 
 CREATE TABLE Certificacao (
@@ -38,4 +44,3 @@ CREATE TABLE Certificacao (
 
     CONSTRAINT PK_Certificacao PRIMARY KEY (Laboratorio_Nome, Material_Nome)
 );
-
