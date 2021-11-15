@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql->bind_param("ss", $username, $password);
 
         if ($sql->execute()) {
-            echo "OK!: teste de inserção finalizado com sucesso.";
+            //echo "OK!: teste de inserção finalizado com sucesso.";
         } else {
             echo "ERRO!: falha ao inserir no banco.";
         }
