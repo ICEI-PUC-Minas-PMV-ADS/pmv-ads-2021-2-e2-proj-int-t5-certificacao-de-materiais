@@ -2,3 +2,29 @@ body {background-color: white;}
 
 .help {cursor: help;}
 .clickable {cursor: pointer;}
+
+.container {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    min-width: 500px;
+    min-height: none;
+    border: 3px double;
+    border-radius: 15px;
+}
+
+.form-line {
+    position: relative;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#login-btn {
+    border: hidden;
+    border-radius: 10px;
+    color:white;
+    background-color: rgb(62, 98, 255);
+}
