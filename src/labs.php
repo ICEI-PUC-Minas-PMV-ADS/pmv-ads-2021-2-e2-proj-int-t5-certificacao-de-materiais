@@ -5,7 +5,7 @@ session_start();
 // Checa se o usuário já logou.
 if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
     
-    echo "<p> Bem vindo, " . $_SESSION["username"] . "<p>";
+    echo "<p> Bem vindo, " . htmlspecialchars($_SESSION["username"]) . ".<p>";
 } else {
     
     echo "<p> Trabalha com emissão de certificados? <a href='cadastro.php'> Cadastre-se </a> para divulgar seus serviços. </p>";
