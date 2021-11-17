@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION["id"] = $id;
                     $_SESSION["username"] = $username;
 
-                    header("location: welcome.php");
+                    header("location: labs.php");
                 } else {
                     $password_err = $username_err = "Usuário ou senha inválidos";
                 }

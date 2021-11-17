@@ -3,7 +3,7 @@ $(document).ready(function(){
         $("#content").attr("data", "consulta.html");
     });
     $("#loadLabs").click(function() {
-        $("#content").attr("data", "labs.html");
+        $("#content").attr("data", "labs.php");
     });
     $("#loadNews").click(function() {
         $("#content").attr("data", "news.html");
