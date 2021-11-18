@@ -12,35 +12,43 @@ GRANT SELECT, INSERT ON CDM.* TO 'public_user'@'localhost';
 
 USE CDM;
 
-CREATE TABLE Laboratorio (
-    Nome varchar(255) NOT NULL, 
-    Usuario varchar(30), 
-    Senha varchar(30),
-    Contato varchar(255),
+CREATE TABLE Usuario (
+	username VARCHAR(20),
+	password VARCHAR(20) NOT NULL,
 
-    PRIMARY KEY (Nome)
+    PRIMARY KEY(username)
+);
+
+CREATE TABLE Laboratorio (
+    id INT(6) AUTO_INCREMENT,
+    usuario_username VARCHAR(20),
+    nome VARCHAR(255) NOT NULL,
+    cnpj VARCHAR(14) NOT NULL,
+    uf VARCHAR(2),
+    cidade VARCHAR(255),
+    endereco VARCHAR(255),
+    telefone VARCHAR(18),
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuario_username) REFERENCES Usuario(username)
 );
 
 CREATE TABLE Material (
-    Nome varchar(255) NOT NULL, 
+    id INT(6) AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL, 
     
-    PRIMARY KEY(Nome)
+    PRIMARY KEY(id)
 );
 
-CREATE TABLE Usuario (
-	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	username VARCHAR(20) NOT NULL UNIQUE,
-	password varchar(20) NOT NULL
-);
-
--- Junction Laboratorio/Material
+-- Junction laboratorio/material
 
 CREATE TABLE Certificacao (
-    Laboratorio_Nome varchar(255),
-    Material_Nome varchar(255),
+    laboratorio_id INT(6),
+    material_id INT(6),
+    nome VARCHAR(255),
 
-    CONSTRAINT FK_Laboratorio FOREIGN KEY (Laboratorio_Nome) REFERENCES Laboratorio (Nome),
-    CONSTRAINT FK_Material FOREIGN KEY (Material_Nome) REFERENCES Material (Nome),
+    CONSTRAINT fk_laboratorio FOREIGN KEY (laboratorio_id) REFERENCES Laboratorio (id),
+    CONSTRAINT fk_material FOREIGN KEY (material_id) REFERENCES Material (id),
 
-    CONSTRAINT PK_Certificacao PRIMARY KEY (Laboratorio_Nome, Material_Nome)
+    CONSTRAINT pk_certificacao PRIMARY KEY (laboratorio_id, material_id)
 );

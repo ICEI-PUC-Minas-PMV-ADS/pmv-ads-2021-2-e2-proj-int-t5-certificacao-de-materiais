@@ -10,19 +10,23 @@ $username = $password = '';
 
 // Processando os dados quando o formulário é enviado.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Tratamento do campo "Usuário".
     if (empty(trim($_POST["username"]))) {
         $username_err = "Usuário não pode ser vazio.";
-    } elseif (!preg_match("/^[a-zA-Z]+$/", trim($_POST["username"]))) {
-        $username_err = "Usuário só pode conter letras.";
+    } elseif (!preg_match("/^[a-zA-Z0-9_.]+$/", trim($_POST["username"]))) {
+        $username_err = "Usuário só pode conter letras, números, ponto ou underline.";
     } else {
+
         // Checa se usuário existe no banco.
-        $sql = $mysqli->prepare("SELECT id FROM Usuario WHERE username = ?");
-        $sql->bind_param('s', trim($_POST["username"]));
+        $stmt = $mysqli->prepare("SELECT username FROM Usuario WHERE username = ?");
+        $stmt->bind_param('s', trim($_POST["username"]));
         
-        if ($sql->execute()) {
-            $sql->store_result();
-            if ($sql->num_rows == 1) {
+        if ($stmt->execute()) {
+
+            $stmt->store_result();
+            
+            if ($stmt->num_rows == 1) {
                 $username_err = "Nome de usuário já em uso.";
             } else {
                 $username = trim($_POST["username"]);
@@ -31,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "ERRO!: falha ao consultar no banco.";
         }
         
-        $sql->close();
+        $stmt->close();
     }
 
     //Tratamento do campo "Senha" e "Confirmar senha".
@@ -40,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (strlen(trim($_POST[password])) < 8) {
         $password_err = "Senha tem que ter pelo menos 8 caracteres.";
     } else {
+
         if (empty(trim($_POST["confirm_password"]))) {
             $confirmpass_err = "Confirme a senha.";
         } elseif (trim($_POST["password"]) != trim($_POST["confirm_password"])){
@@ -51,16 +56,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Checa se tudo está aceitável para registrar novo usuário e registra.
     if (!empty($username) && !empty($password)) {
-        $sql = $mysqli->prepare("INSERT INTO Usuario (username, password) VALUES (?, ?)");
-        $sql->bind_param("ss", $username, $password);
+        $stmt = $mysqli->prepare("INSERT INTO Usuario (username, password) VALUES (?, ?)");
+        $stmt->bind_param("ss", $username, $password);
 
-        if ($sql->execute()) {
-            //echo "OK!: teste de inserção finalizado com sucesso.";
+        if ($stmt->execute()) {
+            // TODO: cadastro realizado com sucesso redirecionar já logado.
+            header("location: login.php");
         } else {
             echo "ERRO!: falha ao inserir no banco.";
         }
 
-        $sql->close();
+        $stmt->close();
     }
 }
 

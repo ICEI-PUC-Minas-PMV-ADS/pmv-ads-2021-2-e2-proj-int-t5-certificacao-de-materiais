@@ -14,8 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($username) && !empty($password)) {
 
-        $stmt = $mysqli->prepare("SELECT id, username, password FROM Usuario WHERE username = ?");
-        $stmt->bind_param("s", $username);
+        $stmt = $mysqli->prepare("SELECT username, password FROM Usuario WHERE username = ?");
+        $stmt->bind_param('s', $username);
 
         if ($stmt->execute()) {
             
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->num_rows == 1) {
                 
                 // Usuário encontrado na base.
-                $stmt->bind_result($id, $username, $stored_password);
+                $stmt->bind_result($username, $stored_password);
                 $stmt->fetch();
 
                 if ($password === $stored_password) {
@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     session_start();
 
                     $_SESSION["isLogged"] = true;
-                    $_SESSION["id"] = $id;
                     $_SESSION["username"] = $username;
 
                     header("location: labs.php");
