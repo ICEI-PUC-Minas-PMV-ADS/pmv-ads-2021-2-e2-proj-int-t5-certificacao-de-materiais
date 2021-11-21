@@ -69,14 +69,65 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
         if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
 
             // Verifica se há Laboratório associado à conta.
-            $stmt = $mysqli->prepare("SELECT id FROM Laboratorio WHERE usuario_username = ?");
+            $stmt = $mysqli->prepare("SELECT nome, cnpj, uf, cidade, endereco, cep, telefone FROM Laboratorio WHERE usuario_username = ?");
             $stmt->bind_param('s', $_SESSION["username"]);
             $stmt->execute();
             $stmt->store_result();
 
             if ($stmt->num_rows == 1) {
+
+                $stmt->bind_result($nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone);
+                $stmt->fetch();
                 
-                // TODO: Há laboratório cadastrado ao login. Direcionar direto para as certificações?
+                echo "<div class='container'><form action='labs.php' method='post'>
+                    <div class='form-line'>
+                        <label>CNPJ: </label>
+                        <input type='text' name='cnpj' placeholder='$cnpj'></input>
+                        <span style='color:red'>$cnpj_err</span>
+                    </div>
+                    <div class='form-line'>
+                        <label>Nome Fantasia: </label>
+                        <input type='text' name='nome' placeholder='$nome'></input>
+                        <span style='color:red'>$nome_err</span>
+                    </div>
+                    <div class='form-line'>
+                        <label>Estado: </label>
+                        <select name='uf'>
+                            <option value='--'>$uf</option>
+                            <option value='AC'>AC</option><option value='AL'>AL</option><option value='AP'>AP</option><option value='AM'>AM</option>
+                            <option value='BA'>BA</option><option value='CE'>CE</option><option value='DF'>DF</option><option value='ES'>ES</option>
+                            <option value='GO'>GO</option><option value='MA'>MA</option><option value='MT'>MT</option><option value='MS'>MS</option>
+                            <option value='MG'>MG</option><option value='PA'>PA</option><option value='PE'>PE</option><option value='PI'>PI</option>
+                            <option value='RJ'>RJ</option><option value='RN'>RN</option><option value='RS'>RS</option><option value='RO'>RO</option>
+                            <option value='RR'>RR</option><option value='SC'>SC</option><option value='SP'>SP</option><option value='SE'>SE</option>
+                            <option value='TO'>TO</option>
+                        </select>
+                        <span style='color:red'>$uf_err</span>
+                    </div>
+                    <div class='form-line'>
+                        <label>Cidade: </label>
+                        <input type='text' name='cidade' placeholder='$cidade'></input>
+                        <span style='color:red'>$cidade_err</span>
+                    </div>
+                    <div class='form-line'>
+                        <label>Endereço: </label>
+                        <input type='text' name='endereco' placeholder='$endereco'></input>
+                        <span style='color:red'>$endereco_err</span>
+                    </div>
+                    <div class='form-line'>
+                        <label>Telefone: </label>
+                        <input type='text' name='telefone' placeholder='$telefone'></input>
+                        <span style='color:red'>$telefone_err</span>
+                    </div>
+                    <div class='form-line'>
+                        <label>CEP: </label>
+                        <input type='text' name='cep' placeholder='$cep'></input>
+                        <span style='color:red'>$cep_err</span>
+                    </div>
+                    <div class='form-line'>
+                    <input id='login-btn' class='clickable' type='submit' value='SALVAR'>
+                    </div>
+                </form></div>"; // Fim do echo.
 
             } else {
 
