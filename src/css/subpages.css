@@ -8,9 +8,7 @@ body {background-color: white;}
     left: 25%;
     top: 25%;
     width: 50%;
-    height: 50%;
     min-width: 500px;
-    min-height: none;
     border: 3px double;
     border-radius: 15px;
 }
@@ -19,7 +17,8 @@ body {background-color: white;}
     position: relative;
     width: 100%;
     padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #login-btn {
