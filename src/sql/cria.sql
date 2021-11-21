@@ -27,6 +27,7 @@ CREATE TABLE Laboratorio (
     uf VARCHAR(2),
     cidade VARCHAR(255),
     endereco VARCHAR(255),
+    cep VARCHAR(8),
     telefone VARCHAR(18),
 
     PRIMARY KEY (id),
