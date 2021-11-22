@@ -34,11 +34,20 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
         ($cep = trim($_POST["cep"])) ? !empty(trim($_POST["cep"])) : ($cep = '');
         ($telefone = trim($_POST["telefone"])) ? !empty(trim($_POST["telefone"])) : ($telefone = '');
         
-        // Verifica se tudo está OK para inserção e insere no banco.
+        // Verifica se tudo está OK para inserção no banco.
         if (!empty(trim($_POST["nome"])) && !empty(trim($_POST["cnpj"]))) {
 
-            $stmt = $mysqli->prepare("INSERT INTO Laboratorio (usuario_username, nome, cnpj, uf, cidade, endereco, cep, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssss", $_SESSION["username"], $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone);
+            // Edita ou cadastra, dependendo se id está setado.
+            if (!isset($_SESSION["id"])) {
+                
+                $stmt = $mysqli->prepare("INSERT INTO Laboratorio (usuario_username, nome, cnpj, uf, cidade, endereco, cep, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("ssssssss", $_SESSION["username"], $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone);
+            
+            } else {
+
+                $stmt = $mysqli->prepare("UPDATE Laboratorio SET nome = ?, cnpj = ?, uf = ?, cidade = ?, endereco = ?, cep = ?, telefone = ? WHERE id = ?");
+                $stmt->bind_param("sssssssi", $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone, $_SESSION["id"]);
+            }
 
             if ($stmt->execute()) {
 
@@ -46,7 +55,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
                 header("location: labs.php");
 
             } else {
-                echo "ERRO!: Falha ao inserir no banco: " . $mysqli->mysqli_error();
+                echo "ERRO!: " . $mysqli->mysqli_error();
             }
 
             $stmt->close();
@@ -65,35 +74,39 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
     </head>
     <body>
         <?php
+
         // Checa se o usuário já logou.
         if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
 
             // Verifica se há Laboratório associado à conta.
-            $stmt = $mysqli->prepare("SELECT nome, cnpj, uf, cidade, endereco, cep, telefone FROM Laboratorio WHERE usuario_username = ?");
+            $stmt = $mysqli->prepare("SELECT id, nome, cnpj, uf, cidade, endereco, cep, telefone FROM Laboratorio WHERE usuario_username = ?");
             $stmt->bind_param('s', $_SESSION["username"]);
             $stmt->execute();
             $stmt->store_result();
 
             if ($stmt->num_rows == 1) {
 
-                $stmt->bind_result($nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone);
+                $stmt->bind_result($id, $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone);
                 $stmt->fetch();
+
+                // Associa a variável de ID do laboratório à sessão. Importante.
+                $_SESSION["id"] = $id;
                 
                 echo "<div class='container'><form action='labs.php' method='post'>
                     <div class='form-line'>
                         <label>CNPJ: </label>
-                        <input type='text' name='cnpj' placeholder='$cnpj'></input>
+                        <input type='text' name='cnpj' value='$cnpj'></input>
                         <span style='color:red'>$cnpj_err</span>
                     </div>
                     <div class='form-line'>
                         <label>Nome Fantasia: </label>
-                        <input type='text' name='nome' placeholder='$nome'></input>
+                        <input type='text' name='nome' value='$nome'></input>
                         <span style='color:red'>$nome_err</span>
                     </div>
                     <div class='form-line'>
                         <label>Estado: </label>
                         <select name='uf'>
-                            <option value='--'>$uf</option>
+                            <option value='$uf'>$uf</option>
                             <option value='AC'>AC</option><option value='AL'>AL</option><option value='AP'>AP</option><option value='AM'>AM</option>
                             <option value='BA'>BA</option><option value='CE'>CE</option><option value='DF'>DF</option><option value='ES'>ES</option>
                             <option value='GO'>GO</option><option value='MA'>MA</option><option value='MT'>MT</option><option value='MS'>MS</option>
@@ -106,22 +119,22 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
                     </div>
                     <div class='form-line'>
                         <label>Cidade: </label>
-                        <input type='text' name='cidade' placeholder='$cidade'></input>
+                        <input type='text' name='cidade' value='$cidade'></input>
                         <span style='color:red'>$cidade_err</span>
                     </div>
                     <div class='form-line'>
                         <label>Endereço: </label>
-                        <input type='text' name='endereco' placeholder='$endereco'></input>
+                        <input type='text' name='endereco' value='$endereco'></input>
                         <span style='color:red'>$endereco_err</span>
                     </div>
                     <div class='form-line'>
                         <label>Telefone: </label>
-                        <input type='text' name='telefone' placeholder='$telefone'></input>
+                        <input type='text' name='telefone' value='$telefone'></input>
                         <span style='color:red'>$telefone_err</span>
                     </div>
                     <div class='form-line'>
                         <label>CEP: </label>
-                        <input type='text' name='cep' placeholder='$cep'></input>
+                        <input type='text' name='cep' value='$cep'></input>
                         <span style='color:red'>$cep_err</span>
                     </div>
                     <div class='form-line'>
