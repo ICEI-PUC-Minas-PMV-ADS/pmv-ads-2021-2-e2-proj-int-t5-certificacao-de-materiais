@@ -20,7 +20,21 @@ require_once("db_connect.php");
             if (!isset($_SESSION["id"])) {
                 echo "<p> Antes de gerenciar seu portifólio de certificações, por favor, finalize o <a href='labs.php'> cadastro do laboratório.</a>";
             } else {
+                
                 echo "<p> Bem-vindo, " . $_SESSION['username'] . ".";
+                
+                // Popula tabela com certificações cadastradas.
+                $query = $mysqli->query("SELECT Certificacao.nome AS c_nome, Material.nome AS m_nome FROM Certificacao, Material WHERE laboratorio_id = " . $_SESSION['id']);
+                if ($query->num_rows > 0) {
+                    
+                    echo "<table><tr><th> Certificação </th><th> Material </th></tr>";
+                    while ($row = $query->fetch_assoc()) {
+                        echo "<tr><td>" . $row["c_nome"] . "</td><td>" . $row["m_nome"] . "</td></tr>";
+                    }
+                    echo "</table>";
+
+                }
+
             }
 
         } else {
