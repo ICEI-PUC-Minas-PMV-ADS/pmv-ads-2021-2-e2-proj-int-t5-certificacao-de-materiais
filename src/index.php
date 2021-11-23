@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+// Variáveis para 
+
+if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
+
+} else {
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,10 +21,21 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <header class="o-header"><img src="img/logo.png"></header>
+        <header class="o-header">
+            <img src="img/logo.png">
+            <div id="avatar">
+                <?php
+                    if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
+                        echo "<p> <a href='index.php'>Sair</a></p>";
+                    } else {
+                        echo "<p> <a href='index.php'>Logar</a></p>";
+                    }
+                ?> 
+                </div>
+        </header>
         
         <div class="o-menu">
-            <div class="o-con clickable" id="loadCons"><p></p>CONSULTAR&nbsp&nbsp&nbsp&nbsp&nbsp • </div>
+            <div class="o-con clickable" id="loadCons"><p></p>CERTIFICAÇÕES&nbsp • </div>
             <div class="o-labs clickable" id="loadLabs"><p></p>LABORATÓRIOS&nbsp&nbsp • </div>
             <div class="o-news clickable" id="loadNews"><p></p>NOTÍCIAS&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • </div>
             <div class="o-about clickable" id="loadAbout"><p></p>SOBRE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • </div>   

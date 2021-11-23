@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#loadCons").click(function() {
-        $("#content").attr("data", "consulta.html");
+        $("#content").attr("data", "certs.php");
     });
     $("#loadLabs").click(function() {
         $("#content").attr("data", "labs.php");
