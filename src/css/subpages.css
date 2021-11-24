@@ -6,7 +6,7 @@ body {background-color: white;}
 .container {
     position: absolute;
     left: 25%;
-    top: 25%;
+    top: 10%;
     width: 50%;
     min-width: 500px;
     border: 3px double;
@@ -21,9 +21,17 @@ body {background-color: white;}
     padding-bottom: 5px;
 }
 
-#login-btn {
+.btn {
     border: hidden;
     border-radius: 10px;
+}
+
+.login-btn, .save-btn {
     color:white;
     background-color: rgb(62, 98, 255);
+}
+
+.del-btn {
+    color:white;
+    background-color: rgb(255, 62, 62);
 }
