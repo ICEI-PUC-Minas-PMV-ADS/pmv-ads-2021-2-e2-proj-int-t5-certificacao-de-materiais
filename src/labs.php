@@ -138,7 +138,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
                         <span style='color:red'>$cep_err</span>
                     </div>
                     <div class='form-line'>
-                    <input id='login-btn' class='clickable' type='submit' value='SALVAR'>
+                    <input class='clickable btn save-btn' type='submit' value='SALVAR'>
                     </div>
                 </form></div>"; // Fim do echo.
 
@@ -190,7 +190,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
                         <span style='color:red'>$cep_err</span>
                     </div>
                     <div class='form-line'>
-                    <input id='login-btn' class='clickable' type='submit' value='SALVAR'>
+                    <input class='clickable btn save-btn' type='submit' value='SALVAR'>
                     </div>
                 </form></div>"; // Fim do echo.
 

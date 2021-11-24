@@ -72,7 +72,7 @@ $mysqli->close();
                     <label style="color:red"><?php echo $password_err ?></label>
                 </div>
                 <div class="form-line">
-                    <input id="login-btn" class="clickable" type="submit" value="LOGAR">
+                    <input id="login-btn" class="clickable login-btn btn" type="submit" value="LOGAR">
                 </div>
             </form>
         </div>
