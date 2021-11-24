@@ -8,6 +8,7 @@ CREATE DATABASE CDM;
 CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrc!!51NdI';
 GRANT SELECT, INSERT ON CDM.* TO 'public_user'@'localhost';
 GRANT UPDATE ON CDM.Laboratorio TO 'public_user'@'localhost';
+GRANT DELETE ON CDM.Certificacao TO 'public_user'@'localhost';
 
 -- Cria estrutura do banco
 

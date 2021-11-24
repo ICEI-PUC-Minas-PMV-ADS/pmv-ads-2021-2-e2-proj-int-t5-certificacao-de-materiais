@@ -3,6 +3,13 @@
 session_start();
 require_once("db_connect.php");
 
+// Em caso de edição do portifólio.
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //echo "DELETE FROM Certificacao WHERE material_id = " . $_POST["delete"]; TODO: deletar
+    $mysqli->query("DELETE FROM Certificacao WHERE material_id = " . $_POST["delete"]);
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +31,18 @@ require_once("db_connect.php");
                 echo "<p> Bem-vindo, " . $_SESSION['username'] . ".";
                 
                 // Popula tabela com certificações cadastradas.
-                $query = $mysqli->query("SELECT Certificacao.nome AS c_nome, Material.nome AS m_nome FROM Certificacao, Material WHERE laboratorio_id = " . $_SESSION['id']);
+                $query = $mysqli->query("SELECT Certificacao.material_id AS id, Certificacao.nome AS nome, Material.nome AS material FROM Certificacao JOIN Material ON Material.id = Certificacao.material_id WHERE Certificacao.laboratorio_id = " . $_SESSION["id"]);
                 if ($query->num_rows > 0) {
                     
-                    echo "<table><tr><th> Certificação </th><th> Material </th></tr>";
+                    echo "
+                    <form action ='certs.php' method='post'>
+                        <table><tr><th> Certificação </th><th> Material </th><th> DELETAR </th></tr>";
                     while ($row = $query->fetch_assoc()) {
-                        echo "<tr><td>" . $row["c_nome"] . "</td><td>" . $row["m_nome"] . "</td></tr>";
+                        echo "<tr><td>" . $row["nome"] . "</td><td>" . $row["material"] . "</td><td><input class='clickable btn del-btn' type='submit' name='delete' value='" . $row["id"] ."'></td></tr>";
                     }
-                    echo "</table>";
+                    echo "
+                        </table>
+                    </form>";
 
                 }
 
@@ -43,6 +54,9 @@ require_once("db_connect.php");
             echo "<p> Já tem um pefil conosco? <a href='login.php'> Faça login </a> para acessar sua conta.</p>";
 
         }
+
+        $mysqli->close();
+        
         ?>
     </body>
 </html>
