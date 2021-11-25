@@ -3,7 +3,7 @@
 DROP DATABASE IF EXISTS CDM;
 CREATE DATABASE CDM;
 
--- Cria usuários
+-- Usuários e permissionamento.
 
 CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrc!!51NdI';
 GRANT SELECT, INSERT ON CDM.* TO 'public_user'@'localhost';
