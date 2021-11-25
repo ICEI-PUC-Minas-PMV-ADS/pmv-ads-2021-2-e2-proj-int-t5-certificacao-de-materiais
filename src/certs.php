@@ -23,8 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $material_id = $row["id"];
         $result->free_result();
 
-        echo $material_id;
-    
+        // Agora material definitivamente existe. Cria certificação.
+        $stmt = $mysqli->prepare("INSERT INTO Certificacao (laboratorio_id, material_id, nome) VALUES (?, ?, ?)");
+        $stmt->bind_param("iis", $_SESSION["id"], $material_id, $_POST["form-nome"]);
+        $stmt->execute();
+        $stmt->close();
+
     //Caso de deleção de Certificação.
     } else {
         $mysqli->query("DELETE FROM Certificacao WHERE material_id = " . $_POST["action"]);
@@ -68,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $result->free_result();
 
                 // Form de cadastro para adição de mais certificações.
-                echo "<tr><td><input type='text' name='nome'></td><td><input type='text' name='material'></td><td><input type='submit' name='action' class='btn clickable' value='Cadastrar'></td></tr>";
+                echo "<tr><td><input type='text' name='form-nome'></td><td><input type='text' name='material'></td><td><input type='submit' name='action' class='btn clickable' value='Cadastrar'></td></tr>";
                 echo "</table></form>";
 
             }
