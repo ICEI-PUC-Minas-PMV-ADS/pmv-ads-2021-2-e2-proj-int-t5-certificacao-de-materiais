@@ -33,7 +33,7 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 | RF-05 | O sistema deve conter local com arquivos PDF, incluindo orientações para o checklist na obtenção da certificação de materiais.| Baixa |
 | RF-06 | O sistema deve permitir update para alteração/inativação das empresas já cadastradas.| Alta |
 | RF-07 | O sistema deve permitir às empresas cadastradas, divulgar certificações com as quais trabalha | Alta |
-| RF-08 | O sistema deve permitir às empresas cadastradas, gesrir as certificações cadastradas | Alta |
+| RF-08 | O sistema deve permitir às empresas cadastradas, gerir as certificações cadastradas | Alta |
 
 ### Requisitos Não Funcionais
 
