@@ -3,11 +3,32 @@
 session_start();
 require_once("db_connect.php");
 
+// Variáveis para inserção.
+$material = $material_id = '';
+
 // Em caso de edição do portifólio.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //echo "DELETE FROM Certificacao WHERE material_id = " . $_POST["delete"]; TODO: deletar
-    $mysqli->query("DELETE FROM Certificacao WHERE material_id = " . $_POST["delete"]);
 
+    // Caso de inserção de Certificação.
+    if ($_POST["action"] == "Cadastrar"){
+
+        // Antes de Inserir, checa se material já existe no banco. TODO: Validação e tratamentos de entradas. Usar prepare.
+        $result = $mysqli->query("SELECT id FROM Material WHERE nome = '" . $_POST["material"] . "'");
+        if ($result->num_rows == 0) {
+            $mysqli->query("INSERT INTO Material (nome) VALUES ('" . $_POST["material"] . "')");
+            $result->free_result();
+        }
+        $result = $mysqli->query("SELECT id FROM Material WHERE nome = '" . $_POST["material"] . "'");
+        $row = $result->fetch_assoc();
+        $material_id = $row["id"];
+        $result->free_result();
+
+        echo $material_id;
+    
+    //Caso de deleção de Certificação.
+    } else {
+        $mysqli->query("DELETE FROM Certificacao WHERE material_id = " . $_POST["action"]);
+    }
 }
 
 ?>
@@ -29,22 +50,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 
                 echo "<p> Bem-vindo, " . $_SESSION['username'] . ".";
+                echo "<form action ='certs.php' method='post'>
+                    <table><tr><th> Certificação </th><th> Material </th><th> DELETAR </th></tr>";
                 
                 // Popula tabela com certificações cadastradas.
-                $query = $mysqli->query("SELECT Certificacao.material_id AS id, Certificacao.nome AS nome, Material.nome AS material FROM Certificacao JOIN Material ON Material.id = Certificacao.material_id WHERE Certificacao.laboratorio_id = " . $_SESSION["id"]);
-                if ($query->num_rows > 0) {
+                $result = $mysqli->query("SELECT Certificacao.material_id AS id, Certificacao.nome AS nome, Material.nome AS material FROM Certificacao JOIN Material ON Material.id = Certificacao.material_id WHERE Certificacao.laboratorio_id = " . $_SESSION["id"]);
+                if ($result->num_rows > 0) {
                     
-                    echo "
-                    <form action ='certs.php' method='post'>
-                        <table><tr><th> Certificação </th><th> Material </th><th> DELETAR </th></tr>";
-                    while ($row = $query->fetch_assoc()) {
-                        echo "<tr><td>" . $row["nome"] . "</td><td>" . $row["material"] . "</td><td><input class='clickable btn del-btn' type='submit' name='delete' value='" . $row["id"] ."'></td></tr>";
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr><td>" . $row["nome"] . "</td><td>" . $row["material"] . "</td><td><input class='clickable btn del-btn' type='submit' name='action' value='" . $row["id"] ."'></td></tr>";
                     }
-                    echo "
-                        </table>
-                    </form>";
 
+                } else {
+                    echo "<tr><td></td><td> Ainda não há certificações cadastradas. </td><td></td></tr>";
                 }
+
+                $result->free_result();
+
+                // Form de cadastro para adição de mais certificações.
+                echo "<tr><td><input type='text' name='nome'></td><td><input type='text' name='material'></td><td><input type='submit' name='action' class='btn clickable' value='Cadastrar'></td></tr>";
+                echo "</table></form>";
 
             }
 
