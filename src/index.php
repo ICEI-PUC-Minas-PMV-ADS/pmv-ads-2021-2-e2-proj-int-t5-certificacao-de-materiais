@@ -7,7 +7,7 @@ session_start();
 if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
 
 } else {
-
+    // Login. Logout. Join.
 }
 
 ?>
@@ -21,18 +21,11 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
         <meta charset="UTF-8">
     </head>
     <body>
-        <header class="o-header">
-            <img src="img/logo.png">
-            <div id="avatar">
-                <?php
-                    if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
-                        echo "<p> <a href='index.php'>Sair</a></p>";
-                    } else {
-                        echo "<p> <a href='index.php'>Logar</a></p>";
-                    }
-                ?> 
-                </div>
+        <header class="o-logo"><img src="img/logo.png"></header>
+        <header class="o-search">
+                <center><input type="text" placeholder="Pesquisar por Material ou Certificação"></center>
         </header>
+        <header class="o-avatar"></header>
         
         <div class="o-menu">
             <div class="o-con clickable" id="loadCons"><p></p>CERTIFICAÇÕES&nbsp • </div>
@@ -44,7 +37,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
 
         <main class="o-main">
             <div>
-                <object id="content" type="text/html" data="consulta.html"></object>
+                <object id="content" type="text/html" data="certs.php"></object>
             </div>
         </main>
 

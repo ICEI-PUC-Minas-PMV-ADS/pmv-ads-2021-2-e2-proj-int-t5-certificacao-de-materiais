@@ -2,7 +2,7 @@ body {
     display: grid;
     grid-gap: 1px;
     grid-template-areas:
-        "header header header"
+        "logo search avatar"
         "menu main main"
         "menu main main"
         "menu main main"
@@ -10,7 +10,7 @@ body {
         "menu main main"
         "footer footer footer";
 
-    grid-template-columns: 202px auto auto;
+    grid-template-columns: 202px 70% auto;
     grid-template-rows: 155px 4vh 4vh 4vh 4vh auto 15vh;
 
     background-color: gray; 
@@ -29,6 +29,9 @@ p {margin: 0;}
 .o-news {grid-area: news;}
 .o-about {grid-area: about;}
 .o-menu {grid-area: menu;}
+.o-logo {grid-area: logo;}
+.o-avatar {grid-area: avatar;}
+.o-search {grid-area: search;}
 
 .o-con, .o-labs, .o-news, .o-about {
     background-color: rgb(255, 153, 102);
@@ -40,19 +43,32 @@ p {margin: 0;}
     white-space: normal;
 }
 
-.o-header {
-    grid-area: header;
+.o-search, .o-footer, .o-logo, .o-avatar {
+    text-indent: 0;
+    background-color: black;
+    color: white;
+}
+
+.o-avatar {
     padding-left: 40px;
+    padding-right: 40px;
 }
 .o-footer {
     grid-area: footer;
     text-align: center;
 }
 
-.o-header, .o-footer {
-    text-indent: 0;
-    background-color: black;
-    color: white;
+.o-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-search input[type=text]{
+    border: none;
+    font-size: 17px;
+    min-width: 600px;
+    transform: translate(0, 100%);
 }
 
 .clickable {
