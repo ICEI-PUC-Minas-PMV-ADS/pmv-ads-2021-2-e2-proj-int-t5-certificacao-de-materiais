@@ -44,24 +44,17 @@ p {margin: 0;}
 }
 
 .o-search, .o-footer, .o-logo, .o-avatar {
+    display: flex;
     text-indent: 0;
     background-color: black;
     color: white;
+    justify-content: center;
+    align-items: center;
 }
 
-.o-avatar {
-    padding-left: 40px;
-    padding-right: 40px;
-}
 .o-footer {
     grid-area: footer;
     text-align: center;
-}
-
-.o-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .o-search input[type=text]{

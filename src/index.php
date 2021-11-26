@@ -23,7 +23,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
     <body>
         <header class="o-logo"><img src="img/logo.png"></header>
         <header class="o-search">
-                <center><input type="text" placeholder="Pesquisar por Material ou Certificação"></center>
+                <div><input type="text" placeholder="Pesquisar por Material ou Certificação"><div id="btn-search" class="clickable"></div></div>
         </header>
         <header class="o-avatar"></header>
         
