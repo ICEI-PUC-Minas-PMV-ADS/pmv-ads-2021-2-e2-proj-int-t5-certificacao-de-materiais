@@ -20,28 +20,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Checa se usuário existe no banco.
         $stmt = $mysqli->prepare("SELECT username FROM Usuario WHERE username = ?");
-        $stmt->bind_param('s', trim($_POST["username"]));
+        $stmt->bind_param('s', $username);
+        $username = trim($_POST["username"]);
         
         if ($stmt->execute()) {
 
             $stmt->store_result();
+            if ($stmt->num_rows == 1) {$username_err = "Nome de usuário já em uso.";}
             
-            if ($stmt->num_rows == 1) {
-                $username_err = "Nome de usuário já em uso.";
-            } else {
-                $username = trim($_POST["username"]);
-            }
-        } else {
-            echo "ERRO!: falha ao consultar no banco.";
-        }
+        } else {echo "ERRO!: falha ao consultar no banco.";}
         
         $stmt->close();
+
     }
 
     //Tratamento do campo "Senha" e "Confirmar senha".
     if (empty(trim($_POST["password"]))) {
         $password_err = "Senha não pode ser vazia.";
-    } elseif (strlen(trim($_POST[password])) < 8) {
+    } elseif (strlen(trim($_POST["password"])) < 8) {
         $password_err = "Senha tem que ter pelo menos 8 caracteres.";
     } else {
 
@@ -55,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Checa se tudo está aceitável para registrar novo usuário e registra.
-    if (!empty($username) && !empty($password)) {
+    if (!empty($username) && !empty($password) && empty($username_err)) {
         $stmt = $mysqli->prepare("INSERT INTO Usuario (username, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $username, $password);
 
@@ -81,17 +77,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <div id="tools"><img class="clickable" src="img/mail.png" title="Enviar por e-mail"><img class="clickable" src="img/pdf.png" title="Salvar como PDF"><img class="clickable" src="img/help.png"title="Ajuda"></div>
         <div id="content">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> <!-- action chama a si mesmo com método post. -->
-            <label>Usuário: </label>
-            <input type="text" name="username">
-            <span style="color:red"><?php echo $username_err; ?></span><br>
-            <label>Senha: </label>
-            <input type="password" name="password">
-            <span style="color:red"><?php echo $password_err; ?></span><br>
-            <label>Confirmar senha: </label>
-            <input type="password" name="confirm_password">
-            <span style="color:red"><?php echo $confirmpass_err; ?></span><br>
-            <input type="submit" class="clickable" value="Cadastrar">
+        <span> Escolha um usuário e Senha para cadastrar-se </span>
+        <span style="color:red"><?php echo $username_err; ?></span>
+        <span style="color:red"><?php echo $password_err; ?></span>
+        <span style="color:red"><?php echo $confirmpass_err; ?></span>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> <!-- action chama a si mesmo com método post. -->     
+            <ul class="wrapper">
+                <li class="form-row">
+                    <label>Usuário: </label>
+                    <input type="text" name="username">
+                </li>
+                <li class="form-row">
+                    <label>Senha: </label>
+                    <input type="password" name="password"> 
+                </li>
+                <li class="form-row">
+                    <label>Confirmar senha: </label>
+                    <input type="password" name="confirm_password">
+                </li>
+                <li class="form-row">
+                    <input type="submit" class="clickable" value="Cadastrar">
+                </li>
+            </ul>
         </form>
     </div>
     </body>
