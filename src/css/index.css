@@ -44,10 +44,13 @@ p {margin: 0;}
 }
 
 .o-search, .o-footer, .o-logo, .o-avatar {
-    display: flex;
     text-indent: 0;
     background-color: black;
     color: white;
+}
+
+.o-search, .o-logo, .o-avatar {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -57,11 +60,14 @@ p {margin: 0;}
     text-align: center;
 }
 
-.o-search input[type=text]{
+.o-search input{
     border: none;
     font-size: 17px;
-    min-width: 600px;
     transform: translate(0, 100%);
+}
+
+.o-search input[type=text] {
+    min-width: 600px;
 }
 
 .clickable {
