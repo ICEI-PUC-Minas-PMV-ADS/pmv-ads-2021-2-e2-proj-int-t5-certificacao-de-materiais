@@ -79,6 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <link rel="stylesheet" href="css/subpages.css">
     </head>
     <body>
+        <div id="tools"><img class="clickable" src="img/mail.png" title="Enviar por e-mail"><img class="clickable" src="img/pdf.png" title="Salvar como PDF"><img class="clickable" src="img/help.png"title="Ajuda"></div>
+        <div id="content">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> <!-- action chama a si mesmo com método post. -->
             <label>Usuário: </label>
             <input type="text" name="username">
@@ -91,5 +93,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <span style="color:red"><?php echo $confirmpass_err; ?></span><br>
             <input type="submit" class="clickable" value="Cadastrar">
         </form>
+    </div>
     </body>
 </html>

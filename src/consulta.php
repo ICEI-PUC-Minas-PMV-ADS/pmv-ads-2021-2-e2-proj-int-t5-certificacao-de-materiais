@@ -39,6 +39,8 @@ if (isset($_SESSION["search"])) {
         <meta charset="UTF-8">
     </head>
     <body>
+        <div id="tools"><img class="clickable" src="img/mail.png" title="Enviar por e-mail"><img class="clickable" src="img/pdf.png" title="Salvar como PDF"><img class="clickable" src="img/help.png"title="Ajuda"></div>
+        <div id="content">
         <?php
 
             echo "<table><tr><th>Certificação</th><th>Material</th><th>Laboratório</th><th>CNPJ</th><th>UF</th><th>Cidade</th><th>Endereço</th><th>CEP</th><th>Telefone</th></tr>";
@@ -50,5 +52,6 @@ if (isset($_SESSION["search"])) {
             $stmt->close();
             $mysqli->close();
         ?>
+        </div>
     </body>
 </html>

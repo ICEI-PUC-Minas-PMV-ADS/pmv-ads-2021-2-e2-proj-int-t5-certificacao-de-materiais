@@ -1,4 +1,9 @@
-body {background-color: white;}
+body {
+    background-color: white;
+    height: auto;
+}
+
+p {margin: 0;}
 
 .help {cursor: help;}
 .clickable {cursor: pointer;}
@@ -34,4 +39,18 @@ body {background-color: white;}
 .del-btn {
     color:white;
     background-color: rgb(255, 62, 62);
+}
+
+#content {
+    display: grid;
+    justify-content: left;
+    border-top: 1px solid black;
+}
+
+#tools {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 4px;
+    column-gap: 4px;
+    overflow: auto;
 }

@@ -44,6 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta charset="UTF-8">
     </head>
     <body>
+        <div id="tools"><img class="clickable" src="img/mail.png" title="Enviar por e-mail"><img class="clickable" src="img/pdf.png" title="Salvar como PDF"><img class="clickable" src="img/help.png"title="Ajuda"></div>
+        <div id="content">
         <?php
         // Checa se o usuário já logou.
         if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
@@ -87,5 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mysqli->close();
         
         ?>
+        </div>
     </body>
 </html>
