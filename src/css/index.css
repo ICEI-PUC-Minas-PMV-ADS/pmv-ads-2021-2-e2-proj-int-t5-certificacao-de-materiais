@@ -63,11 +63,10 @@ p {margin: 0;}
 .o-search input{
     border: none;
     font-size: 17px;
-    transform: translate(0, 100%);
 }
 
 .o-search input[type=text] {
-    min-width: 600px;
+    width: 80%;
 }
 
 .clickable {
@@ -76,6 +75,15 @@ p {margin: 0;}
     font-size: large;
     color: white;
     font-weight: bold;
+}
+
+.form-line {
+    height: 23px;
+    display: block;
+    width: 100%;
+    padding-left: 10%;
+    transform: translate(0, 100%);
+    overflow: auto;
 }
 
 #content {

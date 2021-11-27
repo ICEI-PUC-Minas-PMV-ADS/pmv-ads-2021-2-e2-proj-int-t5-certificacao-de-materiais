@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty(trim($_POST["searchbar"]))) {
     <body>
         <header class="o-logo"><img src="img/logo.png"></header>
         <header class="o-search">
-                <form method="post" action="index.php"><input type="text" name="searchbar" placeholder="Material"><input type="submit" value="Buscar"></form>
+            <div class="form-line"><form method="post" action="index.php"><input type="text" name="searchbar" placeholder="Busque aqui por um material" title="Areia, Cimento, Aço..."><input type="submit" value="Buscar"></form></div>
         </header>
         <header class="o-avatar"></header>
         
