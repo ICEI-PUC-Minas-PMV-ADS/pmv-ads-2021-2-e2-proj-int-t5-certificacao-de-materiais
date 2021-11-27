@@ -2,12 +2,17 @@
 
 session_start();
 
-// Variáveis para 
+// Armazena página apontada no contéudo principal.
+$data = '';
 
-if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
+// Caso buscado por material ou certificação.
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty(trim($_POST["searchbar"]))) {
+
+    $_SESSION["search"] = trim($_POST["searchbar"]);
+    $data = "consulta.php";
 
 } else {
-    // Login. Logout. Join.
+    $data = "certs.php";
 }
 
 ?>
@@ -23,12 +28,12 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
     <body>
         <header class="o-logo"><img src="img/logo.png"></header>
         <header class="o-search">
-                <div><input type="text" placeholder="Pesquisar por Material ou Certificação"><div id="btn-search" class="clickable"></div></div>
+                <form method="post" action="index.php"><input type="text" name="searchbar" placeholder="Material"><input type="submit" value="Buscar"></form>
         </header>
         <header class="o-avatar"></header>
         
         <div class="o-menu">
-            <div class="o-con clickable" id="loadCons"><p></p>CERTIFICAÇÕES&nbsp • </div>
+            <div class="o-con clickable" id="loadCerts"><p></p>CERTIFICAÇÕES&nbsp • </div>
             <div class="o-labs clickable" id="loadLabs"><p></p>LABORATÓRIOS&nbsp&nbsp • </div>
             <div class="o-news clickable" id="loadNews"><p></p>NOTÍCIAS&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • </div>
             <div class="o-about clickable" id="loadAbout"><p></p>SOBRE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • </div>   
@@ -37,7 +42,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
 
         <main class="o-main">
             <div>
-                <object id="content" type="text/html" data="certs.php"></object>
+                <?php echo "<object id='content' type='text/html' data=" . $data . "></object>";?>
             </div>
         </main>
 
