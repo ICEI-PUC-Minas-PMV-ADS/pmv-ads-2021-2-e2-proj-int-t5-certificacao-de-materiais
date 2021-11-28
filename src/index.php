@@ -5,15 +5,46 @@ session_start();
 // Armazena página apontada no contéudo principal.
 $data = '';
 
-// Caso buscado por material ou certificação.
-if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty(trim($_POST["searchbar"]))) {
+// Variáveis usadas para login.
+$login_err = '';
 
-    $_SESSION["search"] = trim($_POST["searchbar"]);
-    $data = "consulta.php";
+// Página chamada por ação do usuário.
+if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
-} else {
-    $data = "certs.php";
-}
+    // Chamado pela barra de pesquisa.
+    if ($_POST["action"] == "Buscar") {
+        if (!empty(trim($_POST["searchbar"]))) {
+
+            $_SESSION["search"] = trim($_POST["searchbar"]);
+            $data = "consulta.php";
+    
+        } else {$data = "certs.php";}
+    }
+    
+    // Chamado pelo botão de logar.
+    if ($_POST["action"] == "Cadastrar") {
+
+        $_SESSION["informed_username"] = trim($_POST["user-field"]);
+        $_SESSION["informed_password"] = trim($_POST["pass-field"]);
+        $data = "join.php";
+
+    } 
+    
+    // Chamado pelo botão de logar.
+    if ($_POST["action"] == "Logar") {
+
+        // Validações
+        if (empty(trim($_POST["user-field"])) || empty(trim($_POST["pass-field"]))) {
+            $login_err = "Campos vazios";
+        } else {
+
+            $_SESSION["informed_username"] = trim($_POST["user-field"]);
+            $_SESSION["informed_password"] = trim($_POST["pass-field"]);
+            
+        }
+    }
+
+} else {$data = "certs.php";}
 
 ?>
 
@@ -28,9 +59,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty(trim($_POST["searchbar"]))) {
     <body>
         <header class="o-logo"><img src="img/logo.png"></header>
         <header class="o-search">
-            <div class="form-line"><form method="post" action="index.php"><input type="text" name="searchbar" placeholder="Busque aqui por um material" title="Areia, Cimento, Aço..."><input type="submit" value="Buscar"></form></div>
+            <div class="form-line"><form method="post" action="index.php"><input type="text" name="searchbar" placeholder="Busque aqui por um material" title="Areia, Cimento, Aço..."><input type="submit" name="action" value="Buscar"></form></div>
         </header>
-        <header class="o-avatar"></header>
+        <header class="o-login">
+            <form action="index.php" method="post">
+                <ul class="wrapper">
+                    <li class="form-row">
+                        <input type="text" name="user-field" placeholder="Usuário">
+                    </li>
+                    <li class="form-row">
+                        <input type="password" name="pass-field" placeholder="Senha">
+                    </li>
+                    <li class="form-row">
+                        <input type="submit" name="action" value="Logar"><input type="submit" name="action" value="Cadastrar">
+                    </li>
+                    <li class="form-row">
+                        <span style="color:red"><?php echo $login_err ?></span>
+                    </li>
+                <ul>
+            </form>
+        </header>
         
         <div class="o-menu">
             <div class="o-con clickable" id="loadCerts"><p></p>CERTIFICAÇÕES&nbsp • </div>

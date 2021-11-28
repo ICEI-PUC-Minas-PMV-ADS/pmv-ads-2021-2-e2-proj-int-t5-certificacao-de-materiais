@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 // Injeta página que cuida da conexão com o banco.
 require_once "db_connect.php";
 
@@ -7,6 +10,11 @@ $username_err = $password_err = $confirmpass_err = '';
 
 // Variáveis para montagem da query.
 $username = $password = '';
+
+// Caso usuário já tenha informado valores de usuário e senha.
+$informed_password = $informed_user = '';
+if (isset($_SESSION["informed_password"])) {$informed_password = $_SESSION["informed_password"];}
+if (isset($_SESSION["informed_username"])) {$informed_user = $_SESSION["informed_username"];}
 
 // Processando os dados quando o formulário é enviado.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -85,11 +93,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul class="wrapper">
                 <li class="form-row">
                     <label>Usuário: </label>
-                    <input type="text" name="username">
+                    <input type="text" name="username" value="<?php echo $informed_user ?>">
                 </li>
                 <li class="form-row">
                     <label>Senha: </label>
-                    <input type="password" name="password"> 
+                    <input type="password" name="password" value="<?php echo $informed_password ?>"> 
                 </li>
                 <li class="form-row">
                     <label>Confirmar senha: </label>
