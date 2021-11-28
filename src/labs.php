@@ -3,64 +3,59 @@
 session_start();
 require_once("db_connect.php");
 
-// Variáveis do texto da form.
+// Variáveis do formulário.
 $nome = $cnpj = $cidade = $uf = $endereco = $telefone = $cep = '';
+$nome_err = $cnpj_err = $cidade_err = $endereco_err = $telefone_err = $cep_err = '';
 
-// variáveis de feedback ao usuário.
-$nome_err = $cnpj_err = $cidade_err = $uf_err = $endereco_err = $telefone_err = $cep_err = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
+    // TODO: melhorar
+    // Tratamento dos campos obrigatórios do formulário.
+    if (empty(trim($_POST["cnpj"]))) {
+        $cnpj_err = "Campo Obrigatório";
+    } else {
+        $cnpj = trim($_POST["cnpj"]);
+    }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty(trim($_POST["nome"]))) {
+        $nome_err = "Campo Obrigatório";
+    } else {
+        $nome = trim($_POST["nome"]);
+    }
 
-        // TODO: melhorar
-        // Tratamento dos campos obrigatórios do formulário.
-        if (empty(trim($_POST["cnpj"]))) {
-            $cnpj_err = "Obrigatório informar o CNPJ.";
-        } else {
-            $cnpj = trim($_POST["cnpj"]);
-        }
+    // Tratamento dos campos opcionais.
+    ($cidade = trim($_POST["cidade"])) ? !empty(trim($_POST["cidade"])) : ($cidade = '');
+    ($uf = trim($_POST["uf"])) ? !empty(trim($_POST["uf"])) : ($uf = '');
+    ($endereco = trim($_POST["endereco"])) ? !empty(trim($_POST["endereco"])) : ($endereco = '');
+    ($cep = trim($_POST["cep"])) ? !empty(trim($_POST["cep"])) : ($cep = '');
+    ($telefone = trim($_POST["telefone"])) ? !empty(trim($_POST["telefone"])) : ($telefone = '');
+    
+    // Verifica se tudo está OK para inserção no banco.
+    if (!empty(trim($_POST["nome"])) && !empty(trim($_POST["cnpj"]))) {
 
-        if (empty(trim($_POST["nome"]))) {
-            $nome_err = "Obrigatório informar o nome fantasia.";
-        } else {
-            $nome = trim($_POST["nome"]);
-        }
-
-        // Tratamento dos campos opcionais.
-        ($cidade = trim($_POST["cidade"])) ? !empty(trim($_POST["cidade"])) : ($cidade = '');
-        ($uf = trim($_POST["uf"])) ? !empty(trim($_POST["uf"])) : ($uf = '');
-        ($endereco = trim($_POST["endereco"])) ? !empty(trim($_POST["endereco"])) : ($endereco = '');
-        ($cep = trim($_POST["cep"])) ? !empty(trim($_POST["cep"])) : ($cep = '');
-        ($telefone = trim($_POST["telefone"])) ? !empty(trim($_POST["telefone"])) : ($telefone = '');
-        
-        // Verifica se tudo está OK para inserção no banco.
-        if (!empty(trim($_POST["nome"])) && !empty(trim($_POST["cnpj"]))) {
-
-            // Edita ou cadastra, dependendo se id está setado.
-            if (!isset($_SESSION["id"])) {
-                
-                $stmt = $mysqli->prepare("INSERT INTO Laboratorio (usuario_username, nome, cnpj, uf, cidade, endereco, cep, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("ssssssss", $_SESSION["username"], $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone);
+        // Edita ou cadastra, dependendo se id está setado.
+        if (!isset($_SESSION["id"])) {
             
-            } else {
+            $stmt = $mysqli->prepare("INSERT INTO Laboratorio (usuario_username, nome, cnpj, uf, cidade, endereco, cep, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssssss", $_SESSION["username"], $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone);
+        
+        } else {
 
-                $stmt = $mysqli->prepare("UPDATE Laboratorio SET nome = ?, cnpj = ?, uf = ?, cidade = ?, endereco = ?, cep = ?, telefone = ? WHERE id = ?");
-                $stmt->bind_param("sssssssi", $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone, $_SESSION["id"]);
-            }
-
-            if ($stmt->execute()) {
-
-                // TODO: Sucesso?
-                header("location: labs.php");
-
-            } else {
-                echo "ERRO!: " . $mysqli->mysqli_error();
-            }
-
-            $stmt->close();
-
+            $stmt = $mysqli->prepare("UPDATE Laboratorio SET nome = ?, cnpj = ?, uf = ?, cidade = ?, endereco = ?, cep = ?, telefone = ? WHERE id = ?");
+            $stmt->bind_param("sssssssi", $nome, $cnpj, $uf, $cidade, $endereco, $cep, $telefone, $_SESSION["id"]);
         }
+
+        if ($stmt->execute()) {
+
+            // TODO: Sucesso?
+            header("location: labs.php");
+
+        } else {
+            echo "ERRO!: " . $mysqli->mysqli_error();
+        }
+
+        $stmt->close();
+
     }
 }
 
@@ -85,7 +80,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
             // Verifica se há Laboratório associado à conta.
             $stmt = $mysqli->prepare("SELECT id, nome, cnpj, uf, cidade, endereco, cep, telefone FROM Laboratorio WHERE usuario_username = ?");
             $stmt->bind_param('s', $_SESSION["username"]);
-            $stmt->execute();
+            $stmt->execute(); // TODO: checar sucesso.
             $stmt->store_result();
 
             if ($stmt->num_rows == 1) {
@@ -96,18 +91,18 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
                 // Associa a variável de ID do laboratório à sessão. Importante.
                 $_SESSION["id"] = $id;
                 
-                echo "<div class='container'><form action='labs.php' method='post'>
-                    <div class='form-line'>
+                echo "
+                <form action='labs.php' method='post'>
+                <ul class='wrapper'>
+                    <li class='form-row'>
                         <label>CNPJ: </label>
-                        <input type='text' name='cnpj' value='$cnpj'></input>
-                        <span style='color:red'>$cnpj_err</span>
-                    </div>
-                    <div class='form-line'>
+                        <input type='text' name='cnpj' value='$cnpj' placeholder='$cnpj_err'>
+                    </li>
+                    <li class='form-row'>
                         <label>Nome Fantasia: </label>
-                        <input type='text' name='nome' value='$nome'></input>
-                        <span style='color:red'>$nome_err</span>
-                    </div>
-                    <div class='form-line'>
+                        <input type='text' name='nome' value='$nome' placeholder='$nome_err'>
+                    </li>
+                    <li class='form-row'>
                         <label>Estado: </label>
                         <select name='uf'>
                             <option value='$uf'>$uf</option>
@@ -119,47 +114,43 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
                             <option value='RR'>RR</option><option value='SC'>SC</option><option value='SP'>SP</option><option value='SE'>SE</option>
                             <option value='TO'>TO</option>
                         </select>
-                        <span style='color:red'>$uf_err</span>
-                    </div>
-                    <div class='form-line'>
+                    </li>
+                    <li class='form-row'>
                         <label>Cidade: </label>
-                        <input type='text' name='cidade' value='$cidade'></input>
-                        <span style='color:red'>$cidade_err</span>
-                    </div>
-                    <div class='form-line'>
+                        <input type='text' name='cidade' value='$cidade' placeholder='$cidade_err'>
+                    </li>
+                    <li class='form-row'>
                         <label>Endereço: </label>
-                        <input type='text' name='endereco' value='$endereco'></input>
-                        <span style='color:red'>$endereco_err</span>
-                    </div>
-                    <div class='form-line'>
+                        <input type='text' name='endereco' value='$endereco' placeholder='$endereco_err'>
+                    </li>
+                    <li class='form-row'>
                         <label>Telefone: </label>
-                        <input type='text' name='telefone' value='$telefone'></input>
-                        <span style='color:red'>$telefone_err</span>
-                    </div>
-                    <div class='form-line'>
+                        <input type='text' name='telefone' value='$telefone' placeholder='$telefone_err'>
+                    </li>
+                    <li class='form-row'>
                         <label>CEP: </label>
-                        <input type='text' name='cep' value='$cep'></input>
-                        <span style='color:red'>$cep_err</span>
-                    </div>
-                    <div class='form-line'>
-                    <input class='clickable btn save-btn' type='submit' value='SALVAR'>
-                    </div>
-                </form></div>"; // Fim do echo.
+                        <input type='text' name='cep' value='$cep' placeholder='$cep_err'>
+                    </li>
+                    <li class='form-row'>
+                        <input class='clickable btn save-btn' type='submit' value='SALVAR'>
+                    </li>
+                </ul>
+                </form>"; // Fim do echo.
 
             } else {
 
-                echo "<div class='container'><form action='labs.php' method='post'>
-                    <div class='form-line'>
+                echo "
+                <form action='labs.php' method='post'>
+                <ul class='wrapper'>
+                    <li class='form-row'>
                         <label>CNPJ: </label>
-                        <input type='text' name='cnpj'></input>
-                        <span style='color:red'>$cnpj_err</span>
-                    </div>
-                    <div class='form-line'>
+                        <input type='text' name='cnpj' placeholder='$cnpj_err'>
+                    </li>
+                    <li class='form-row'>
                         <label>Nome Fantasia: </label>
-                        <input type='text' name='nome'></input>
-                        <span style='color:red'>$nome_err</span>
-                    </div>
-                    <div class='form-line'>
+                        <input type='text' name='nome' placeholder='$nome_err'>
+                    </li>
+                    <li class='form-row'>
                         <label>Estado: </label>
                         <select name='uf'>
                             <option value='--'>--</option>
@@ -172,31 +163,32 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
                             <option value='TO'>TO</option>
                         </select>
                         <span style='color:red'>$uf_err</span>
-                    </div>
-                    <div class='form-line'>
+                    </li>
+                    <li class='form-row'>
                         <label>Cidade: </label>
                         <input type='text' name='cidade'></input>
                         <span style='color:red'>$cidade_err</span>
-                    </div>
-                    <div class='form-line'>
+                    </li>
+                    <li class='form-row'>
                         <label>Endereço: </label>
                         <input type='text' name='endereco'></input>
                         <span style='color:red'>$endereco_err</span>
-                    </div>
-                    <div class='form-line'>
+                    </li>
+                    <li class='form-row'>
                         <label>Telefone: </label>
                         <input type='text' name='telefone'></input>
                         <span style='color:red'>$telefone_err</span>
-                    </div>
-                    <div class='form-line'>
+                    </li>
+                    <li class='form-row'>
                         <label>CEP: </label>
                         <input type='text' name='cep'></input>
                         <span style='color:red'>$cep_err</span>
-                    </div>
-                    <div class='form-line'>
-                    <input class='clickable btn save-btn' type='submit' value='SALVAR'>
-                    </div>
-                </form></div>"; // Fim do echo.
+                    </li>
+                    <li class='form-row'>
+                        <input class='clickable btn save-btn' type='submit' value='SALVAR'>
+                    </li>
+                </ul>
+                </form>"; // Fim do echo.
 
             }
 
