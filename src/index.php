@@ -9,7 +9,7 @@ require_once("db_connect.php");
 $data = "labs.php";
 
 // Variáveis usadas para login.
-$username = $password = $login_err = '';
+$username = $id = $password = $login_err = '';
 
 // Página chamada por ação do usuário.
 if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
@@ -56,13 +56,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
                     $stmt->bind_result($username, $stored_password);
                     $stmt->fetch();
 
-                    // Password correto; cria sessão.
+                    // Valida password.
                     if ($password === $stored_password) {
 
+                        // Validado; cria sessão.
                         session_start();
                         $_SESSION["isLogged"] = true;
                         $_SESSION["username"] = $username;
-                        header("location: index.php");
+
+                        // Checa se já cadastrou informações do laboratório.
+                        $stmt = $mysqli->prepare("SELECT id FROM Laboratorio WHERE usuario_username = ?");
+                        $stmt->bind_param('s', $_SESSION["username"]);
+                        $stmt->execute(); // TODO: checar sucesso.
+                        $stmt->store_result();
+
+                        if ($stmt->num_rows == 1) {
+
+                            $stmt->bind_result($id);
+                            $stmt->fetch();
+                            $_SESSION["id"] = $id;  // Vincula id do LAB à sessão.
+                            $data = "certs.php";    // Já fez cadastro do laboratório; desejo mais provável é gerir certificações.                               
+
+                        } else {
+                            $data = "labs.php";     // Tem que terminar cadastro do laboratório.
+                        }
 
                     } else {
                         $login_err = "Credenciais inválidas";
@@ -73,6 +90,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
             }
     
             $stmt->close();
+            $mysqli->close();
+
         }
     }
 }
@@ -95,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
         <header class='o-login'>
         <?php
         if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
-            echo "<ul class='wrapper'><li>Bem-vindo, " . $_SESSION["username"] . "</li><li><a href='logout.php'> Sair </a></li></ul>";
+            echo "<ul class='wrapper'><li>Bem-vindo, " . $_SESSION["username"] . "</li><li><a href='logout.php'> Fazer LogOff </a></li></ul>";
         } else {
             echo "
                 <form action='index.php' method='post'>
