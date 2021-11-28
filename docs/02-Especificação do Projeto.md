@@ -32,6 +32,8 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 | RF-04 | O sistema deve disponibilizar notícias sobre eventos, treinamentos e informações relevantes para o setor.  | Baixa |
 | RF-05 | O sistema deve conter local com arquivos PDF, incluindo orientações para o checklist na obtenção da certificação de materiais.| Baixa |
 | RF-06 | O sistema deve permitir update para alteração/inativação das empresas já cadastradas.| Alta |
+| RF-07 | O sistema deve permitir às empresas cadastradas, divulgar certificações com as quais trabalha | Alta |
+| RF-08 | O sistema deve permitir às empresas cadastradas, gerir as certificações cadastradas | Alta |
 
 ### Requisitos Não Funcionais
 
@@ -45,6 +47,7 @@ A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá 
 | RNF-04 | O sistema deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge). | Alta |
 | RNF-05 | O funcionamento interno do site deverá ser desenvolvido utilizando algoritmos otimizados para a filtragem das opções solicitadas. | Baixa |
 | RNF-06 | O sistema deve comportar alternativas de acesso às suas funcionalidades de forma permitir delas a usuários com diferentes dificuldades | Alta |
+
 
 ### Restrições
 

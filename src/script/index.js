@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    $("#loadCons").click(function() {
-        $("#content").attr("data", "consulta.html");
+    $("#loadCerts").click(function() {
+        $("#content").attr("data", "certs.php");
     });
     $("#loadLabs").click(function() {
-        $("#content").attr("data", "labs.html");
+        $("#content").attr("data", "labs.php");
     });
     $("#loadNews").click(function() {
         $("#content").attr("data", "news.html");
@@ -11,7 +11,6 @@ $(document).ready(function(){
     $("#loadAbout").click(function() {
         $("#content").attr("data", "about.html");
     });
-
     $(".clickable").mouseover(function () {
         $(this).css("background-color", "rgb(77, 77, 255)");
     });
