@@ -56,6 +56,11 @@ p {margin: 0;}
     padding: .5em;
 }
 
+.form-row input::placeholder {
+    color: red;
+    opacity: 1;
+}
+
 .form-row > label {
     flex: 1;
 }
