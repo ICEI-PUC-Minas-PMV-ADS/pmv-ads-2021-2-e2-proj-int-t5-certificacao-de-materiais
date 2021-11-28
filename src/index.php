@@ -2,11 +2,14 @@
 
 session_start();
 
+// Injeta código de conexão ao banco.
+require_once("db_connect.php");
+
 // Armazena página apontada no contéudo principal.
-$data = '';
+$data = "certs.php";
 
 // Variáveis usadas para login.
-$login_err = '';
+$username = $password = $login_err = '';
 
 // Página chamada por ação do usuário.
 if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
@@ -18,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
             $_SESSION["search"] = trim($_POST["searchbar"]);
             $data = "consulta.php";
     
-        } else {$data = "certs.php";}
+        }
     }
     
-    // Chamado pelo botão de logar.
+    // Chamado pelo botão de Cadastrar.
     if ($_POST["action"] == "Cadastrar") {
 
         $_SESSION["informed_username"] = trim($_POST["user-field"]);
@@ -33,18 +36,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
     // Chamado pelo botão de logar.
     if ($_POST["action"] == "Logar") {
 
-        // Validações
+        // Validação Básica
         if (empty(trim($_POST["user-field"])) || empty(trim($_POST["pass-field"]))) {
-            $login_err = "Campos vazios";
+            $login_err = "Preencha os campos";
         } else {
 
-            $_SESSION["informed_username"] = trim($_POST["user-field"]);
-            $_SESSION["informed_password"] = trim($_POST["pass-field"]);
-            
+            $username = trim($_POST["user-field"]);
+            $password = trim($_POST["pass-field"]);
+
+            $stmt = $mysqli->prepare("SELECT username, password FROM Usuario WHERE username = ?");
+            $stmt->bind_param('s', $username);
+
+            if ($stmt->execute()) {
+                $stmt->store_result();
+
+                if ($stmt->num_rows == 1) {
+
+                    // Usuário existe no banco.
+                    $stmt->bind_result($username, $stored_password);
+                    $stmt->fetch();
+
+                    // Password correto; cria sessão.
+                    if ($password === $stored_password) {
+
+                        session_start();
+                        $_SESSION["isLogged"] = true;
+                        $_SESSION["username"] = $username;
+                        header("location: index.php");
+
+                    } else {
+                        $login_err = "Credenciais inválidas";
+                    }
+                }
+            } else {
+                echo "ERRO!: falha ao consultar o banco. " . $mysqli->mysqli_error();
+            }
+    
+            $stmt->close();
         }
     }
-
-} else {$data = "certs.php";}
+}
 
 ?>
 
@@ -61,23 +92,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
         <header class="o-search">
             <div class="form-line"><form method="post" action="index.php"><input type="text" name="searchbar" placeholder="Busque aqui por um material" title="Areia, Cimento, Aço..."><input type="submit" name="action" value="Buscar"></form></div>
         </header>
-        <header class="o-login">
-            <form action="index.php" method="post">
-                <ul class="wrapper">
-                    <li class="form-row">
-                        <input type="text" name="user-field" placeholder="Usuário">
-                    </li>
-                    <li class="form-row">
-                        <input type="password" name="pass-field" placeholder="Senha">
-                    </li>
-                    <li class="form-row">
-                        <input type="submit" name="action" value="Logar"><input type="submit" name="action" value="Cadastrar">
-                    </li>
-                    <li class="form-row">
-                        <span style="color:red"><?php echo $login_err ?></span>
-                    </li>
-                <ul>
-            </form>
+        <header class='o-login'>
+        <?php
+        if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
+            echo "<p>Bem-vindo, " . $_SESSION["username"] . "</p>";
+            echo "<p><a href='logout.php'> Sair </a></p>";
+        } else {
+            echo "
+                <form action='index.php' method='post'>
+                    <ul class='wrapper'>
+                        <li class='form-row'>
+                            <input type='text' name='user-field' placeholder='Usuário'>
+                        </li>
+                        <li class='form-row'>
+                            <input type='password' name='pass-field' placeholder='Senha'>
+                        </li>
+                        <li class='form-row'>
+                            <input type='submit' name='action' value='Logar'><input type='submit' name='action' value='Cadastrar'>
+                        </li>
+                        <li class='form-row'>
+                            <span style='color:red'>" . $login_err . "</span>
+                        </li>
+                    <ul>
+                </form>";
+        }
+        ?>
         </header>
         
         <div class="o-menu">

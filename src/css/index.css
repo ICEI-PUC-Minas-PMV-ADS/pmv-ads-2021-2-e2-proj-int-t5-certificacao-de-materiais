@@ -2,7 +2,7 @@ body {
     display: grid;
     grid-gap: 1px;
     grid-template-areas:
-        "logo search avatar"
+        "logo search login"
         "menu main main"
         "menu main main"
         "menu main main"
@@ -30,7 +30,7 @@ p {margin: 0;}
 .o-about {grid-area: about;}
 .o-menu {grid-area: menu;}
 .o-logo {grid-area: logo;}
-.o-avatar {grid-area: avatar;}
+.o-login {grid-area: login;}
 .o-search {grid-area: search;}
 
 .o-con, .o-labs, .o-news, .o-about {
@@ -43,16 +43,31 @@ p {margin: 0;}
     white-space: normal;
 }
 
-.o-search, .o-footer, .o-logo, .o-avatar {
+.o-search, .o-footer, .o-logo, .o-login {
     text-indent: 0;
     background-color: black;
     color: white;
 }
 
-.o-search, .o-logo, .o-avatar {
+.o-search, .o-logo, .o-login {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.wrapper {
+    list-style: none;
+    padding: 0;
+}
+
+.form-row {
+    display: flex;
+    justify-content: center;
+    padding: .5em;
+}
+
+.form-row input{
+    flex: 1;
 }
 
 .o-footer {

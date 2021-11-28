@@ -206,7 +206,7 @@ if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
         } else {
             
             echo "<p> Trabalha com emissão de certificados? <a href='join.php'> Cadastre-se </a> para divulgar seus serviços. </p>";
-            echo "<p> Já tem um pefil conosco? <a href='login.php'> Faça login </a> para acessar sua conta.</p>";
+            echo "<p> Caso já tenha um perfil, faça login para gerenciar sua conta.</p>";
 
         }
         ?>
