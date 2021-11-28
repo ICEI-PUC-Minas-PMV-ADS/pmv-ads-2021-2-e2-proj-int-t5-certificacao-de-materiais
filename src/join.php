@@ -19,6 +19,9 @@ if (isset($_SESSION["informed_username"])) {$informed_user = $_SESSION["informed
 // Processando os dados quando o formulário é enviado.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // Evita que os campos do formulário sejam preenchidos com dados antigos caso o usuário mude de ideia.
+    $informed_password = $informed_user = '';
+
     // Tratamento do campo "Usuário".
     if (empty(trim($_POST["username"]))) {
         $username_err = "Usuário não pode ser vazio.";
@@ -89,22 +92,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="tools"><img class="clickable" src="img/mail.png" title="Enviar por e-mail"><img class="clickable" src="img/pdf.png" title="Salvar como PDF"><img class="clickable" src="img/help.png"title="Ajuda"></div>
         <div id="content">
         <span> Escolha um usuário e Senha para cadastrar-se </span>
-        <span style="color:red"><?php echo $username_err; ?></span>
-        <span style="color:red"><?php echo $password_err; ?></span>
-        <span style="color:red"><?php echo $confirmpass_err; ?></span>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> <!-- action chama a si mesmo com método post. -->     
             <ul class="wrapper">
                 <li class="form-row">
                     <label>Usuário: </label>
-                    <input type="text" name="username" value="<?php echo $informed_user ?>">
+                    <input type="text" name="username" value="<?php echo $informed_user ?>" placeholder="<?php echo $username_err; ?>">
                 </li>
                 <li class="form-row">
                     <label>Senha: </label>
-                    <input type="password" name="password" value="<?php echo $informed_password ?>"> 
+                    <input type="password" name="password" value="<?php echo $informed_password ?>" placeholder="<?php echo $password_err; ?>"> 
                 </li>
                 <li class="form-row">
                     <label>Confirmar senha: </label>
-                    <input type="password" name="confirm_password">
+                    <input type="password" name="confirm_password" placeholder="<?php echo $confirmpass_err; ?>">
                 </li>
                 <li class="form-row">
                     <input type="submit" class="clickable" value="Cadastrar">
