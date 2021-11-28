@@ -40,7 +40,7 @@ if (isset($_SESSION["search"])) {
     </head>
     <body>
         <div id="tools"><img class="clickable" src="img/mail.png" title="Enviar por e-mail"><img class="clickable" src="img/pdf.png" title="Salvar como PDF"><img class="clickable" src="img/help.png"title="Ajuda"></div>
-        <div id="content">
+        <div id="cert-content">
         <?php
 
             echo "<table><tr><th>Certificação</th><th>Material</th><th>Laboratório</th><th>CNPJ</th><th>UF</th><th>Cidade</th><th>Endereço</th><th>CEP</th><th>Telefone</th></tr>";

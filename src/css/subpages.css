@@ -78,3 +78,35 @@ p {margin: 0;}
     column-gap: 4px;
     overflow: auto;
 }
+
+/* Tabelas de certificação */
+#cert-content {
+    border-top: 1px solid black;
+}
+
+table {
+    margin-top: 4px;
+    table-layout: fixed;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    border-collapse: collapse;
+    border-radius: 3px;
+    background-color: rgb(230, 230, 230);
+}
+
+td, tr, th {
+    padding: 4px;
+}
+
+th {
+    background-color: rgb(59, 59, 59);
+    color: white;
+}
+
+tr:nth-child(odd){background-color:rgb(210, 210, 210);}
+/*tr:hover {background-color: rgb(180, 180, 180);}*/
+
+#cert-content input, button {
+    width: 100%;
+}

@@ -10,7 +10,7 @@ $material = $material_id = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Caso de inserção de Certificação.
-    if ($_POST["action"] == "Cadastrar"){
+    if ($_POST["action"] == "Adicionar"){
 
         // Antes de Inserir, checa se material já existe no banco. TODO: Validação e tratamentos de entradas. Usar prepare.
         $result = $mysqli->query("SELECT id FROM Material WHERE nome = '" . $_POST["material"] . "'");
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <div id="tools"><img class="clickable" src="img/mail.png" title="Enviar por e-mail"><img class="clickable" src="img/pdf.png" title="Salvar como PDF"><img class="clickable" src="img/help.png"title="Ajuda"></div>
-        <div id="content">
+        <div id="cert-content">
         <?php
         // Checa se o usuário já logou.
         if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
@@ -56,14 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 
                 echo "<form action ='certs.php' method='post'>
-                    <table><tr><th> Certificação </th><th> Material </th><th> DELETAR </th></tr>";
+                    <table><tr><th> Certificação </th><th> Material </th><th></th></tr>";
                 
                 // Popula tabela com certificações cadastradas.
                 $result = $mysqli->query("SELECT Certificacao.material_id AS id, Certificacao.nome AS nome, Material.nome AS material FROM Certificacao JOIN Material ON Material.id = Certificacao.material_id WHERE Certificacao.laboratorio_id = " . $_SESSION["id"]);
                 if ($result->num_rows > 0) {
                     
                     while ($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["nome"] . "</td><td>" . $row["material"] . "</td><td><input class='clickable btn del-btn' type='submit' name='action' value='" . $row["id"] ."'></td></tr>";
+                        echo "<tr class=''><td>" . $row["nome"] . "</td><td>" . $row["material"] . "</td><td><button class='clickable' type='submit' name='action' value='" . $row["id"] ."'>Deletar</button></td></tr>";
                     }
 
                 } else {
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $result->free_result();
 
                 // Form de cadastro para adição de mais certificações.
-                echo "<tr><td><input type='text' name='form-nome'></td><td><input type='text' name='material'></td><td><input type='submit' name='action' class='btn clickable' value='Cadastrar'></td></tr>";
+                echo "<tr><td><input type='text' name='form-nome'></td><td><input type='text' name='material'></td><td><input type='submit' name='action' class='clickable' value='Adicionar'></td></tr>";
                 echo "</table></form>";
 
             }
