@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
         
         <div class="o-menu">
             <div class="o-con clickable" id="loadCerts"><p></p>CERTIFICAÇÕES&nbsp • </div>
-            <div class="o-labs clickable" id="loadLabs"><p></p>LABORATÓRIOS&nbsp&nbsp • </div>
+            <div class="o-labs clickable" id="loadLabs"><p></p>CADASTRO&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • </div>
             <div class="o-news clickable" id="loadNews"><p></p>NOTÍCIAS&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • </div>
             <div class="o-about clickable" id="loadAbout"><p></p>SOBRE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • </div>   
             <div class="o-empty"></div>        
