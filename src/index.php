@@ -6,7 +6,7 @@ session_start();
 require_once("db_connect.php");
 
 // Armazena página apontada no contéudo principal.
-$data = "certs.php";
+$data = "labs.php";
 
 // Variáveis usadas para login.
 $username = $password = $login_err = '';
@@ -95,8 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
         <header class='o-login'>
         <?php
         if (isset($_SESSION["isLogged"]) && $_SESSION["isLogged"] === true) {
-            echo "<p>Bem-vindo, " . $_SESSION["username"] . "</p>";
-            echo "<p><a href='logout.php'> Sair </a></p>";
+            echo "<ul class='wrapper'><li>Bem-vindo, " . $_SESSION["username"] . "</li><li><a href='logout.php'> Sair </a></li></ul>";
         } else {
             echo "
                 <form action='index.php' method='post'>
