@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty(trim($_POST["username"]))) {
         $username_err = "Usuário não pode ser vazio.";
     } elseif (!preg_match("/^[a-zA-Z0-9_.]+$/", trim($_POST["username"]))) {
-        $username_err = "Usuário só pode conter letras, números, ponto ou underline.";
+        $username_err = "Utilize letras, números, '.' ou '_'";
     } else {
 
         // Checa se usuário existe no banco.
@@ -64,8 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ss", $username, $password);
 
         if ($stmt->execute()) {
-            // TODO: cadastro realizado com sucesso redirecionar já logado.
-            header("location: login.php");
+            
+            $_SESSION["isLogged"] = true;
+            $_SESSION["username"] = $username;
+            echo "<script>window.parent.location.href = 'index.php'; </script>";
+
         } else {
             echo "ERRO!: falha ao inserir no banco.";
         }
