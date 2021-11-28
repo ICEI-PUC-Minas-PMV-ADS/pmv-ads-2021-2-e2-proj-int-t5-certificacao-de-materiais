@@ -27,7 +27,7 @@ if (isset($_SESSION["search"])) {
     $stmt->bind_param("s", $_SESSION["search"]);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($cer_nome, $mat_nome, $lab_nome, $lab_cnpj, $lab_uf, $lab_cidade, $lab_end, $lab_cep, $lab_tel);
+    $stmt->bind_result($cer_nome, $mat_nome, $lab_cnpj, $lab_nome, $lab_uf, $lab_cidade, $lab_end, $lab_cep, $lab_tel);
 }
 
 ?>
