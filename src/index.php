@@ -120,10 +120,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
                 <form action='index.php' method='post'>
                     <ul class='wrapper'>
                         <li class='form-row'>
-                            <input type='text' name='user-field' placeholder='Usuário'>
+                            <input type='text' name='user-field' placeholder='Usuário' pattern='[A-Za-z0-9]+' title='Somente letras e números' max='20' required>
                         </li>
                         <li class='form-row'>
-                            <input type='password' name='pass-field' placeholder='Senha'>
+                            <input type='password' name='pass-field' placeholder='Senha' title='Entre 6 a 20 caracteres' min='6' max='20' required>
                         </li>
                         <li class='form-row'>
                             <input type='submit' name='action' value='Logar'><input type='submit' name='action' value='Cadastrar'>

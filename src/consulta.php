@@ -43,7 +43,7 @@ if (isset($_SESSION["search"])) {
         <div id="cert-content">
         <?php
 
-            echo "<table><tr><th>Certificação</th><th>Material</th><th>Laboratório</th><th>CNPJ</th><th>UF</th><th>Cidade</th><th>Endereço</th><th>CEP</th><th>Telefone</th></tr>";
+            echo "<table><tr><th>Certificação</th><th>Material</th><th>Laboratório</th><th>CNPJ</th><th>UF</th><th>Cidade</th><th>Endereço</th><th>CEP</th><th>Contato</th></tr>";
             while ($stmt->fetch()) {
                 echo "<tr><td>" . $cer_nome . "</td><td>" . $mat_nome . "</td><td>" . $lab_nome . "</td><td>" . $lab_cnpj . "</td><td>" . $lab_uf . "</td><td>" . $lab_cidade . "</td><td>" . $lab_end . "</td><td>" . $lab_cep . "</td><td>" . $lab_tel .  "</td></tr>";
             }

@@ -9,26 +9,29 @@ $nome_err = $cnpj_err = $cidade_err = $endereco_err = $telefone_err = $cep_err =
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // TODO: melhorar
-    // Tratamento dos campos obrigatórios do formulário.
-    if (empty(trim($_POST["cnpj"]))) {
-        $cnpj_err = "Campo Obrigatório";
-    } else {
-        $cnpj = trim($_POST["cnpj"]);
-    }
-
-    if (empty(trim($_POST["nome"]))) {
-        $nome_err = "Campo Obrigatório";
-    } else {
-        $nome = trim($_POST["nome"]);
-    }
+    // Já validados na submissão.
+    $cnpj = trim($_POST["cnpj"]);
+    $nome = trim($_POST["nome"]);
 
     // Tratamento dos campos opcionais.
-    ($cidade = trim($_POST["cidade"])) ? !empty(trim($_POST["cidade"])) : ($cidade = '');
+    if (empty(trim($_POST["cidade"]))) {
+        $cidade = "Não Informado";
+    } else {$cidade = substr(trim($_POST["cidade"]), 0, 30);}
+
     ($uf = trim($_POST["uf"])) ? !empty(trim($_POST["uf"])) : ($uf = '');
-    ($endereco = trim($_POST["endereco"])) ? !empty(trim($_POST["endereco"])) : ($endereco = '');
-    ($cep = trim($_POST["cep"])) ? !empty(trim($_POST["cep"])) : ($cep = '');
-    ($telefone = trim($_POST["telefone"])) ? !empty(trim($_POST["telefone"])) : ($telefone = '');
+
+    if (empty(trim($_POST["endereco"]))) {
+        $endereco = "Não Informado";
+    } else {$endereco = substr(trim($_POST["endereco"]), 0, 100);}
+
+    if (empty(trim($_POST["cep"]))) {
+        $cep = "Não Informado";
+    } else {$cep = substr(trim($_POST["cep"]), 0, 13);}
+
+    if (empty(trim($_POST["telefone"]))) {
+        $telefone = "Não Informado";
+    } else {$telefone = substr(trim($_POST["telefone"]), 0, 100);}
+
     
     // Verifica se tudo está OK para inserção no banco.
     if (!empty(trim($_POST["nome"])) && !empty(trim($_POST["cnpj"]))) {
@@ -51,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("location: labs.php");
 
         } else {
-            echo "ERRO!: " . $mysqli->mysqli_error();
+            echo "ERRO!: " . $mysqli->error;
         }
 
         $stmt->close();
@@ -96,11 +99,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul class='wrapper'>
                     <li class='form-row'>
                         <label>CNPJ: </label>
-                        <input type='text' name='cnpj' value='$cnpj' placeholder='$cnpj_err'>
+                        <input type='text' name='cnpj' value='$cnpj' pattern='[0-9]{14}' title='14 digitos' required>
                     </li>
                     <li class='form-row'>
                         <label>Nome Fantasia: </label>
-                        <input type='text' name='nome' value='$nome' placeholder='$nome_err'>
+                        <input type='text' name='nome' value='$nome' min='1' max='30' required>
                     </li>
                     <li class='form-row'>
                         <label>Estado: </label>
@@ -117,19 +120,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                     <li class='form-row'>
                         <label>Cidade: </label>
-                        <input type='text' name='cidade' value='$cidade' placeholder='$cidade_err'>
+                        <input type='text' name='cidade' value='$cidade'>
                     </li>
                     <li class='form-row'>
                         <label>Endereço: </label>
-                        <input type='text' name='endereco' value='$endereco' placeholder='$endereco_err'>
+                        <input type='text' name='endereco' value='$endereco'>
                     </li>
                     <li class='form-row'>
-                        <label>Telefone: </label>
-                        <input type='text' name='telefone' value='$telefone' placeholder='$telefone_err'>
+                        <label>Contato: </label>
+                        <input type='text' name='telefone' value='$telefone' title='0 a 18 dígitos'>
                     </li>
                     <li class='form-row'>
                         <label>CEP: </label>
-                        <input type='text' name='cep' value='$cep' placeholder='$cep_err'>
+                        <input type='text' name='cep' value='$cep' title='14 digitos'>
                     </li>
                     <li class='form-row'>
                         <input class='clickable btn save-btn' type='submit' value='SALVAR'>
@@ -144,11 +147,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul class='wrapper'>
                     <li class='form-row'>
                         <label>CNPJ: </label>
-                        <input type='text' name='cnpj' placeholder='$cnpj_err'>
+                        <input type='text' name='cnpj' pattern='[0-9]{14}' title='14 digitos' required>
                     </li>
                     <li class='form-row'>
                         <label>Nome Fantasia: </label>
-                        <input type='text' name='nome' placeholder='$nome_err'>
+                        <input type='text' name='nome' min='1' max='30' required>
                     </li>
                     <li class='form-row'>
                         <label>Estado: </label>
@@ -165,23 +168,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                     <li class='form-row'>
                         <label>Cidade: </label>
-                        <input type='text' name='cidade'></input>
-                        <span style='color:red'>$cidade_err</span>
+                        <input type='text' name='cidade'>
                     </li>
                     <li class='form-row'>
                         <label>Endereço: </label>
-                        <input type='text' name='endereco'></input>
-                        <span style='color:red'>$endereco_err</span>
+                        <input type='text' name='endereco'>
                     </li>
                     <li class='form-row'>
-                        <label>Telefone: </label>
-                        <input type='text' name='telefone'></input>
-                        <span style='color:red'>$telefone_err</span>
+                        <label>Contato: </label>
+                        <input type='text' name='telefone' title='0 a 18 dígitos'>
                     </li>
                     <li class='form-row'>
                         <label>CEP: </label>
-                        <input type='text' name='cep'></input>
-                        <span style='color:red'>$cep_err</span>
+                        <input type='text' name='cep' title='8 dígitos'>
                     </li>
                     <li class='form-row'>
                         <input class='clickable btn save-btn' type='submit' value='SALVAR'>

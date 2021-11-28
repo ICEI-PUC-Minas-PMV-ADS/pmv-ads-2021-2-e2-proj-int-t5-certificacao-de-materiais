@@ -18,6 +18,14 @@ body {
 
 p {margin: 0;}
 
+input:invalid {
+    border: 1px solid black;
+}
+
+input:invalid {
+    border: 2px solid red
+}
+
 .o-menu {
     white-space: nowrap; 
     background-color: rgb(255, 153, 102)

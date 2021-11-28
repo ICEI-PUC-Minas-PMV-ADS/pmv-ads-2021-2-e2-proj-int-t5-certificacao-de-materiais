@@ -4,7 +4,8 @@ session_start();
 require_once("db_connect.php");
 
 // Variáveis para inserção.
-$material = $material_id = '';
+$material = $material_id = $cert_nome = '';
+$material_err = $cert_err = '';
 
 // Em caso de edição do portifólio.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,22 +13,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Caso de inserção de Certificação.
     if ($_POST["action"] == "Adicionar"){
 
-        // Antes de Inserir, checa se material já existe no banco. TODO: Validação e tratamentos de entradas. Usar prepare.
-        $result = $mysqli->query("SELECT id FROM Material WHERE nome = '" . $_POST["material"] . "'");
-        if ($result->num_rows == 0) {
-            $mysqli->query("INSERT INTO Material (nome) VALUES ('" . $_POST["material"] . "')");
-            $result->free_result();
-        }
-        $result = $mysqli->query("SELECT id FROM Material WHERE nome = '" . $_POST["material"] . "'");
-        $row = $result->fetch_assoc();
-        $material_id = $row["id"];
-        $result->free_result();
+        // Checagens.
+        if (empty(trim($_POST["material"]))) {
+            $material_err = "Necessário informar um nome";
+        } elseif (strlen(trim($_POST["material"]) > 30)) {
+            $material = substr(trim($_POST["material"]), 0, 30);
+        } else {$material = trim($_POST["material"]);}
+        
+        if (empty(trim($_POST["cert_nome"]))) {
+            $cert_err = "Necessário informar um material";
+        } elseif (strlen(trim($_POST["cert_nome"]) > 30)) {
+            $cert_nome = substr(trim($_POST["cert_nome"]), 0, 30);
+        } else {$cert_nome = trim($_POST["cert_nome"]);}
 
-        // Agora material definitivamente existe. Cria certificação.
-        $stmt = $mysqli->prepare("INSERT INTO Certificacao (laboratorio_id, material_id, nome) VALUES (?, ?, ?)");
-        $stmt->bind_param("iis", $_SESSION["id"], $material_id, $_POST["form-nome"]);
-        $stmt->execute();
-        $stmt->close();
+        if (empty($cert_err) && empty($material_err)) {
+
+            // Antes de Inserir, checa se material já existe no banco. TODO: Validação e tratamentos de entradas. Usar prepare.
+            $result = $mysqli->query("SELECT id FROM Material WHERE nome = '$material'");
+            if ($result->num_rows == 0) {
+                $mysqli->query("INSERT INTO Material (nome) VALUES ('$material')");
+                $result->free_result();
+            }
+            $result = $mysqli->query("SELECT id FROM Material WHERE nome = '$material'");
+            $row = $result->fetch_assoc();
+            $material_id = $row["id"];
+            $result->free_result();
+
+            // Agora material definitivamente existe. Cria certificação.
+            $stmt = $mysqli->prepare("INSERT INTO Certificacao (laboratorio_id, material_id, nome) VALUES (?, ?, ?)");
+            $stmt->bind_param("iis", $_SESSION["id"], $material_id, $cert_nome);
+            $stmt->execute();
+            $stmt->close();
+        }
 
     //Caso de deleção de Certificação.
     } else {
@@ -73,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $result->free_result();
 
                 // Form de cadastro para adição de mais certificações.
-                echo "<tr><td><input type='text' name='form-nome'></td><td><input type='text' name='material'></td><td><input type='submit' name='action' class='clickable' value='Adicionar'></td></tr>";
+                echo "<tr><td><input type='text' name='cert_nome' placeholder='$cert_err'></td><td><input type='text' name='material' placeholder='$material_err'></td><td><input type='submit' name='action' class='clickable' value='Adicionar'></td></tr>";
                 echo "</table></form>";
 
             }

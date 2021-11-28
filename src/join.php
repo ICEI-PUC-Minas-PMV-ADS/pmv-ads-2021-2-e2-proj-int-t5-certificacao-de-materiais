@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Tratamento do campo "Usuário".
     if (empty(trim($_POST["username"]))) {
         $username_err = "Usuário não pode ser vazio.";
-    } elseif (!preg_match("/^[a-zA-Z0-9_.]+$/", trim($_POST["username"]))) {
+    } elseif (!preg_match("/^[a-zA-Z0-9]+$/", trim($_POST["username"]))) {
         $username_err = "Utilize letras, números, '.' ou '_'";
     } else {
 
@@ -48,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Tratamento do campo "Senha" e "Confirmar senha".
     if (empty(trim($_POST["password"]))) {
         $password_err = "Senha não pode ser vazia.";
-    } elseif (strlen(trim($_POST["password"])) < 8) {
-        $password_err = "Senha tem que ter pelo menos 8 caracteres.";
+    } elseif (strlen(trim($_POST["password"])) < 6) {
+        $password_err = "6 a 20 caracteres."; // TODO: obsoleto?
     } else {
 
         if (empty(trim($_POST["confirm_password"]))) {
@@ -96,15 +96,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul class="wrapper">
                 <li class="form-row">
                     <label>Usuário: </label>
-                    <input type="text" name="username" value="<?php echo $informed_user ?>" placeholder="<?php echo $username_err; ?>">
+                    <input type="text" name="username" value="<?php echo $informed_user ?>" placeholder="<?php echo $username_err; ?>" min="1" max="20" pattern="[A-Za-z0-9]+" title="Somente letras e números" required>
                 </li>
                 <li class="form-row">
                     <label>Senha: </label>
-                    <input type="password" name="password" value="<?php echo $informed_password ?>" placeholder="<?php echo $password_err; ?>"> 
+                    <input type="password" name="password" value="<?php echo $informed_password ?>" placeholder="<?php echo $password_err; ?>" min="6" max="20" title="Entre 6 e 20 caracteres" required> 
                 </li>
                 <li class="form-row">
                     <label>Confirmar senha: </label>
-                    <input type="password" name="confirm_password" placeholder="<?php echo $confirmpass_err; ?>">
+                    <input type="password" name="confirm_password" placeholder="<?php echo $confirmpass_err; ?>" required>
                 </li>
                 <li class="form-row">
                     <input type="submit" class="clickable" value="Cadastrar">
