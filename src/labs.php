@@ -162,7 +162,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <option value='RR'>RR</option><option value='SC'>SC</option><option value='SP'>SP</option><option value='SE'>SE</option>
                             <option value='TO'>TO</option>
                         </select>
-                        <span style='color:red'>$uf_err</span>
                     </li>
                     <li class='form-row'>
                         <label>Cidade: </label>
