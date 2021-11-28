@@ -55,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p> Antes de gerenciar seu portifólio de certificações, por favor, finalize o <a href='labs.php'> cadastro do laboratório.</a>";
             } else {
                 
-                echo "<p> Bem-vindo, " . $_SESSION['username'] . ".";
                 echo "<form action ='certs.php' method='post'>
                     <table><tr><th> Certificação </th><th> Material </th><th> DELETAR </th></tr>";
                 
