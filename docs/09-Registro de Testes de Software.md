@@ -11,10 +11,10 @@
 
 ### Evidências
 
-Etapa 1:
+Interface de acesso:
 ![ct-01-01](img/teste_ct-01-01.PNG)
 
-Etapa 2:
+Login com sucesso:
 ![ct-01-02](img/teste_ct-02-02.PNG)
 
 ## CT-02: Realizar cadastro de Laboratório
@@ -28,32 +28,25 @@ Etapa 2:
 
 ### Evidências
 
-Etapa 1:
+Interface de cadastro:
 ![ct-02-01](img/teste_ct-02-01.PNG)
 
-Etapa 2:
+Interface preenchida:
 ![ct-02-02](img/teste_ct-02-02.PNG)
 
-Etapa 3:
+Inserção bem-sucedida no banco:
 ![ct-02-03](img/teste_ct-02-03.PNG)
 
 ## CT-03: Localizar Entidade Certificadora
 
 * **Objetivo:** Encontrar o endereço de uma entidade certificadora dado um material.
 * **Etapas**: 
- 1. Acessar página de Consulta: <url>/consulta.html
+ 1. Acessar página principal: <url>/index.php
  2. Informar um material válido.
  3. Apertar ENTER ou clicar no botão "Procurar". 
 * **Saída Esperada**: Nome e endereço de(as) entidade(as) que certifica(m) o material.
 
 ### Evidências
 
-Etapa 1:
+Encontrado informações de laboratório que emite certificação para areia:
 ![ct-03-01](img/teste_ct-03-01.PNG)
-
-Etapa 2:
-![ct-03-01](img/teste_ct-03-02.PNG)
-
-Etapa 3:
-![ct-03-01](img/teste_ct-03-03.PNG)
-

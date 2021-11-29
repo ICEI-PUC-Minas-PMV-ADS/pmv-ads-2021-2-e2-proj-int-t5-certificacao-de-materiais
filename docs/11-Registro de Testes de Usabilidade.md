@@ -17,6 +17,7 @@ Campos não informados são tratados internamente com valores padrão.
 ![valor padrão](img/teste_tu01-02.PNG)
 
 Campos dão feedback visual ao usuário quando preenchidos com caracteres impróprios. Também é apresentado o que se espera via pop-up.
+
 ![valor padrão](img/teste_tu01-03.PNG)
 
 ### Conclusões
