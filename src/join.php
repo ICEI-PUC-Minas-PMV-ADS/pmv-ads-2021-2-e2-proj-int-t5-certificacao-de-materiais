@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty(trim($_POST["confirm_password"]))) {
             $confirmpass_err = "Confirme a senha.";
         } elseif (trim($_POST["password"]) != trim($_POST["confirm_password"])){
-            $confirmpass_err = "Valores informados estão diferentes.";
+            $confirmpass_err = "Valores diferentes";
         } else {
             $password = trim($_POST["password"]);
         }
