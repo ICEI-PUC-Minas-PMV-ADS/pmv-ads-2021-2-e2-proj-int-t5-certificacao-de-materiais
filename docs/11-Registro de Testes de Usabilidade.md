@@ -11,9 +11,11 @@
 Sistema se comportou como esperado. A velocidade de cadastro é limitada somente a velocidade que o usuário consegue preencher os campos.
 
 Os filtro estão funcionando. Formulários não são enviados sem informação obrigatória. 
+
 ![campo alarmando](img/teste_tu01-01.PNG)
 
 Campos não informados são tratados internamente com valores padrão.
+
 ![valor padrão](img/teste_tu01-02.PNG)
 
 Campos dão feedback visual ao usuário quando preenchidos com caracteres impróprios. Também é apresentado o que se espera via pop-up.
