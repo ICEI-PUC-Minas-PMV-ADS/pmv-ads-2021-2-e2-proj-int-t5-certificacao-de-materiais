@@ -3,13 +3,6 @@
 DROP DATABASE IF EXISTS CDM;
 CREATE DATABASE CDM;
 
--- Usuários e permissionamento.
-
-CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrc!!51NdI';
-GRANT SELECT, INSERT ON CDM.* TO 'public_user'@'localhost';
-GRANT UPDATE ON CDM.Laboratorio TO 'public_user'@'localhost';
-GRANT DELETE ON CDM.Certificacao TO 'public_user'@'localhost';
-
 -- Cria estrutura do banco
 
 USE CDM;
@@ -55,3 +48,10 @@ CREATE TABLE Certificacao (
 
     CONSTRAINT pk_certificacao PRIMARY KEY (laboratorio_id, material_id)
 );
+
+-- Usuários e permissionamento.
+
+CREATE USER IF NOT EXISTS 'public_user'@'localhost' IDENTIFIED BY 'EEFKrc!!51NdI';
+GRANT SELECT, INSERT ON CDM.* TO 'public_user'@'localhost';
+GRANT UPDATE ON CDM.Laboratorio TO 'public_user'@'localhost';
+GRANT DELETE ON CDM.Certificacao TO 'public_user'@'localhost';
