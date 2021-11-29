@@ -27,13 +27,13 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 | **ID** | **Descrição** | **Prioridade** |
 | --- | --- | --- |
 | RF-01 | O sistema deve permite encontrar entidades certificadoras para determinado material | Alta |
-| RF-02 | O sistema deve fornecer informações referente as normas e certificações que devem ser cumpridas pelas construtoras.  | Baixa |
+| RF-02 | O sistema deve fornecer informações referente às normas e certificações que devem ser cumpridas pelas construtoras.  | Baixa |
 | RF-03 | O sistema deve permitir o cadastro do perfil laboratórios (fornecedor) de ensaios com as informações: nome da empresa, contato, localização.  | Alta |
 | RF-04 | O sistema deve disponibilizar notícias sobre eventos, treinamentos e informações relevantes para o setor.  | Baixa |
 | RF-05 | O sistema deve conter local com arquivos PDF, incluindo orientações para o checklist na obtenção da certificação de materiais.| Baixa |
 | RF-06 | O sistema deve permitir update para alteração/inativação das empresas já cadastradas.| Alta |
 | RF-07 | O sistema deve permitir às empresas cadastradas, divulgar certificações com as quais trabalha | Alta |
-| RF-08 | O sistema deve permitir às empresas cadastradas, gerir as certificações cadastradas | Alta |
+| RF-08 | O sistema deve permitir às empresas cadastradas, a publicar e gerir as certificações | Alta |
 
 ### Requisitos Não Funcionais
 
@@ -42,12 +42,11 @@ A tabela a seguir apresenta os requisitos não funcionais que o projeto deverá 
 | **ID** | **Descrição** | **Prioridade** |
 | --- | --- | --- |
 | RNF-01 | Deverá ser providenciado o ambiente de hospedagem do site, no qual permitirá sua publicação na internet e a manutenção do mesmo durante seu ciclo de vida. (Provedor de nuvem, Github Pages, etc.) | Alta |
-| RNF-02 | A interface deverá utilizar linguagens front-end padrões (HMTM, CSS, JavaScript). | Baixa |
+| RNF-02 | A interface deverá utilizar linguagens front-end padrões (HMTL, CSS, JavaScript). | Baixa |
 | RNF-03 | O sistema deverá ser integrado aos mecanismos de pesquisa na internet (Google, Bing, Yahoo Search). | Média |
 | RNF-04 | O sistema deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge). | Alta |
 | RNF-05 | O funcionamento interno do site deverá ser desenvolvido utilizando algoritmos otimizados para a filtragem das opções solicitadas. | Baixa |
 | RNF-06 | O sistema deve comportar alternativas de acesso às suas funcionalidades de forma permitir delas a usuários com diferentes dificuldades | Alta |
-
 
 ### Restrições
 
@@ -58,7 +57,6 @@ As questões que limitam a execução desse projeto e que se configuram como obr
 | RE-01 | O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 07/11/2021. |
 | RE-02 | Fica condicionado ao perfil administrador  a inclusão/exclusão dos laboratórios e materiais cadastrados..  |
 | RE-03 | A equipe não pode subcontratar o desenvolvimento do trabalho. |
-
 
 ### Diagrama de casos de uso
 

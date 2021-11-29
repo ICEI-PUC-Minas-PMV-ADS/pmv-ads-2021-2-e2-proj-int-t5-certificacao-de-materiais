@@ -1,4 +1,27 @@
 # Registro de Testes de Usabilidade
+
+## TU-01
+
+* **Objetivo:** Mensurar o esforço e qualidade da experiência para realizar um cadastro no sistema. Certificar que as interações necessárias para realização do cadastro sejam acessíveis, rápidas e sem ambiguidade.
+
+* **Organização:** Foi feita a inserção de cadastros novos no sistema. Tentativas de usuários repetidos e entradas já existentes no banco. Tentativas de injetar código malicioso pelo front-end. Tentativa de excer o limite dos campos. Tentativa de entrar com dados imprórpios aos campos.
+
+### Resultados
+
+Sistema se comportou como esperado. A velocidade de cadastro é limitada somente a velocidade que o usuário consegue preencher os campos.
+
+Os filtro estão funcionando. Formulários não são enviados sem informação obrigatória. 
+![campo alarmando](img/teste_tu01-01.PNG)
+
+Campos não informados são tratados internamente com valores padrão.
+![valor padrão](img/teste_tu01-02.PNG)
+
+Campos dão feedback visual ao usuário quando preenchidos com caracteres impróprios. Também é apresentado o que se espera via pop-up.
+![valor padrão](img/teste_tu01-03.PNG)
+
+### Conclusões
+Sistema é fácil, usuário é encaminhado automaticamente às sessões mais prováveis que deseja. Por exemplo, automaticamente logado e direcionado à página de cadastro no prmeiro acesso. Em acessos posteriores, automaticamente direcionado à página de gestão de certificações. Sistema também prevê e evita erros comuns, dando a todo momento retorno visual ao usuário do que está acontecendo e o porquê. 
+
 ## TU-02
 
 * **Objetivo:** Mensurar o esforço e qualidade da experiência para encontrar um laboratório que emita certificações para um determinado material. Certificar que as interações necessárias para encontrar a informação desejada sejam acessíveis, rápidas e sem ambiguidade. Certificar que a informação encontrada é completa e satisfatória.
