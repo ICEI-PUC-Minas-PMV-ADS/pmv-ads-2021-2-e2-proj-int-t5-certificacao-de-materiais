@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty(trim($_POST["cep"]))) {
         $cep = "Não Informado";
-    } else {$cep = substr(trim($_POST["cep"]), 0, 13);}
+    } else {$cep = substr(trim($_POST["cep"]), 0, 14);}
 
     if (empty(trim($_POST["telefone"]))) {
         $telefone = "Não Informado";
