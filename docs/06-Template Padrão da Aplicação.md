@@ -5,7 +5,7 @@ O layout da aplicação é documentado na figura abaixo, seguido da descrição 
 ![layout](img/layout.png)
 
 Componentes:
-* **Cabeçalho:** comporta o logo da aplicação e informações de login.
+* **Cabeçalho:** comporta o logo da aplicação, barra de busca e informações de login.
 * **Menu:** concede acesso às outras páginas do site.
 * **Conteúdo Principal:** exibe o conteúdo em evidência.
 * **Rodapé:** exibe informações de contato e documentais.

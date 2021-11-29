@@ -9,7 +9,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 | **Ambiente** | **Plataforma** | **Link de Acesso** |
 | --- | --- | --- |
 | Repositório de código fonte | GitHub | [https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t5-certificacao-de-materiais](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t5-certificacao-de-materiais) |
-| Documentos do projeto | Sharepoint | [https://sgapucminasbr.sharepoint.com/sites/team\_sga\_865\_2021\_1\_5954105-Time01-CertificaesdeMateriais/\_layouts/15/Doc.aspx?OR=teams&amp;action=edit&amp;sourcedoc={332522EB-2AAB-4237-9959-862DFD8D4D17](https://sgapucminasbr.sharepoint.com/sites/team_sga_865_2021_1_5954105-Time01-CertificaesdeMateriais/_layouts/15/Doc.aspx?OR=teams&amp;action=edit&amp;sourcedoc=%7B332522EB-2AAB-4237-9959-862DFD8D4D17)} |
+| Documentos do projeto | GitHub | [https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t5-certificacao-de-materiais/tree/main/docs](https://sgapucminasbr.sharepoint.com/sites/team_sga_865_2021_1_5954105-Time01-CertificaesdeMateriais/_layouts/15/Doc.aspx?OR=teams&amp;action=edit&amp;sourcedoc=%7B332522EB-2AAB-4237-9959-862DFD8D4D17)} |
 | Projeto de Interface e Wireframes | MarvelApp | [https://marvelapp.com/4hd6091](https://marvelapp.com/4hd6091) |
 | Gerenciamento do Projeto | GitHub | [https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2021-2-e2-proj-int-t5-certificacao-de-materiais/projects] |
 
