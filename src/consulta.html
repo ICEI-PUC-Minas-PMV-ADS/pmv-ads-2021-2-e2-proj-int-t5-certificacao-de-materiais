@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/6ec418e653.js" crossorigin="anonymous"></script>
-<script src="script/subpages.js"></script>
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
@@ -68,83 +67,43 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <hr style="width:200px" class="w3-opacity">
 
   Consultar Laboratorios Cadastrados.<br><br>
-  <form action="php/consulta.php" method="post">
+  <!-- <form action="php/consulta.php" method="post">
       <input type="text" name="material" title="Ex.: areia, cimento..." placeholder="Informe aqui o Material"> <img class="help clickable" src="img/help.png" title="Clique para obter ajuda" alt="ajuda"><br><br>
       <input class="clickable" type="submit" value="Procurar">
-  </form>
+  </form> -->
+
+  <form action="" id="findform">
+    <input id="textinput" type="text" name="material" title="Ex.: areia, cimento..." placeholder="Informe aqui o Material"> <img class="help clickable" src="img/help.png" title="Clique para obter ajuda" alt="ajuda"><br><br>
+    <input class="clickable" type="submit" value="Procurar">
+</form>
+
+<script src="script/CMManager.js"></script>
+
+
+<div class="w3-content w3-justify w3-text-grey w3-padding-64">
+  <h2 class="w3-text-light-grey">Consulta Laboratorios</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <p>Cadastrar Laboratorios
+  </p>
+  <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+
+<table class="w3-table-all w3-margin-top" id="resultTable">
+  <tr>
+    <th style="width:60%;">Nome Laboratorio</th>
+    <th style="width:40%;">Endereco</th>
+    <th style="width:40%;">CNPJ</th>
+  </tr>
+  <tr>
+    <td>lab1</td>
+    <td>Minas Gerais</td>
+    <td>123123123</td>
+  </tr>
+</table>
+
+<p><strong>Status:</strong> Tabela atualizada. 01/11/2021</p>
+
+
 </div>
-<!-- <div class="w3-content w3-justify w3-text-grey w3-padding-64">
-    <h2 class="w3-text-light-grey">Consulta Laboratorios</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>Na lista abaixo voce pode consulta um dos laboratorios associados.
-    </p>
-    <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
-
-  <table class="w3-table-all w3-margin-top" id="myTable">
-    <tr>
-      <th style="width:60%;">Nome</th>
-      <th style="width:40%;">Estado</th>
-    </tr>
-    <tr>
-      <td>lab1</td>
-      <td>Minas Gerais</td>
-    </tr>
-    <tr>
-      <td>lab2</td>
-      <td>Sao Paulo</td>
-    </tr>
-    <tr>
-      <td>lab3</td>
-      <td>Rio de Janeiro</td>
-    </tr>
-    <tr>
-      <td>lab4</td>
-      <td>Minas Gerais</td>
-    </tr>
-    <tr>
-      <td>lab5</td>
-      <td>Bahia</td>
-    </tr>
-    <tr>
-      <td>lab6</td>
-      <td>Pernanbuco</td>
-    </tr>
-    <tr>
-      <td>lab7</td>
-      <td>Amazonas</td>
-    </tr>
-    <tr>
-      <td>lab8</td>
-      <td>Espirito Santo</td>
-    </tr>
-  </table>
-
-  <p><strong>Status:</strong> Tabela atualizada. 01/11/2021</p>
-
-  <script>
-    function myFunction() {
-      var input, filter, table, tr, td, i;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
-    </script>
-    
-</div> -->
-
-
 
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -163,21 +122,3 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </body>
 </html>
 
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="css/subpages.css">
-        <script src="script/jquery-3.6.0.min.js"></script>
-        <script src="script/subpages.js"></script>
-        <meta charset="UTF-8">
-    </head>
-<body>
-    <center>
-    Informe no campo abaixo para o material para qual deseja encontrar entidades certificadoras.<br><br>
-    <form action="php/consulta.php" method="post">
-        <input type="text" name="material" title="Ex.: areia, cimento..." placeholder="Informe aqui o Material"> <img class="help clickable" src="img/help.png" title="Clique para obter ajuda" alt="ajuda"><br><br>
-        <input class="clickable" type="submit" value="Procurar">
-    </form>
-    </center>
-</body>
-</html> -->

@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "NomeLaboratorio": "laboratorio1", 
+            "CNPJ": "156465165164",
+            "Areia": 1,
+            "Cimento": 0,
+            "Ferro": 1,
+            "Endereco": "156465165164"
+        },
+        {
+            "NomeLaboratorio": "laboratorio2", 
+            "CNPJ": "156465165164",
+            "Areia": 1,
+            "Cimento": 0,
+            "Ferro": 1,
+            "Endereco": "156465165164"
+        },
+        {
+            "NomeLaboratorio": "laboratorio3", 
+            "CNPJ": "156465165164",
+            "Areia": 1,
+            "Cimento": 0,
+            "Ferro": 1,
+            "Endereco": "156465165164"
+        },
+        {
+            "NomeLaboratorio": "laboratorio4", 
+            "CNPJ": "156465165164",
+            "Areia": 1,
+            "Cimento": 0,
+            "Ferro": 1,
+            "Endereco": "156465165164"
+        },
+        {
+            "NomeLaboratorio": "laboratorio5", 
+            "CNPJ": "156465165164",
+            "Areia": 1,
+            "Cimento": 0,
+            "Ferro": 1,
+            "Endereco": "156465165164"
+        }
+    ]
+}
